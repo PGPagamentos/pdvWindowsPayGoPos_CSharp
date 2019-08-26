@@ -1,0 +1,44 @@
+C:\Users\santos.thiago\documents\visual studio 2015\Projects\WpfApplication1\WpfApplication1\bin\Debug\POSExample.exe.config
+C:\Users\santos.thiago\documents\visual studio 2015\Projects\WpfApplication1\WpfApplication1\bin\Debug\POSExample.exe
+C:\Users\santos.thiago\documents\visual studio 2015\Projects\WpfApplication1\WpfApplication1\bin\Debug\POSExample.pdb
+C:\Users\santos.thiago\documents\visual studio 2015\Projects\WpfApplication1\WpfApplication1\obj\Debug\POSExample.csprojResolveAssemblyReference.cache
+C:\Users\santos.thiago\documents\visual studio 2015\Projects\WpfApplication1\WpfApplication1\obj\Debug\MainWindow.g.cs
+C:\Users\santos.thiago\documents\visual studio 2015\Projects\WpfApplication1\WpfApplication1\obj\Debug\App.g.cs
+C:\Users\santos.thiago\documents\visual studio 2015\Projects\WpfApplication1\WpfApplication1\obj\Debug\POSExample_MarkupCompile.cache
+C:\Users\santos.thiago\documents\visual studio 2015\Projects\WpfApplication1\WpfApplication1\obj\Debug\POSExample_MarkupCompile.lref
+C:\Users\santos.thiago\documents\visual studio 2015\Projects\WpfApplication1\WpfApplication1\obj\Debug\MainWindow.baml
+C:\Users\santos.thiago\documents\visual studio 2015\Projects\WpfApplication1\WpfApplication1\obj\Debug\POSExample.g.resources
+C:\Users\santos.thiago\documents\visual studio 2015\Projects\WpfApplication1\WpfApplication1\obj\Debug\POSExample.Properties.Resources.resources
+C:\Users\santos.thiago\documents\visual studio 2015\Projects\WpfApplication1\WpfApplication1\obj\Debug\POSExample.csproj.GenerateResource.Cache
+C:\Users\santos.thiago\documents\visual studio 2015\Projects\WpfApplication1\WpfApplication1\obj\Debug\POSExample.exe
+C:\Users\santos.thiago\documents\visual studio 2015\Projects\WpfApplication1\WpfApplication1\obj\Debug\POSExample.pdb
+C:\Users\Teste\OneDrive\Kits\POS_TEF_S920v4.0.64.0_PAX_PTI_2.0.5.0\Aplicação de exemplo\POSExample\POSExample\bin\Debug\POSExample.exe.config
+C:\Users\Teste\OneDrive\Kits\POS_TEF_S920v4.0.64.0_PAX_PTI_2.0.5.0\Aplicação de exemplo\POSExample\POSExample\bin\Debug\POSExample.exe
+C:\Users\Teste\OneDrive\Kits\POS_TEF_S920v4.0.64.0_PAX_PTI_2.0.5.0\Aplicação de exemplo\POSExample\POSExample\bin\Debug\POSExample.pdb
+C:\Users\Teste\OneDrive\Kits\POS_TEF_S920v4.0.64.0_PAX_PTI_2.0.5.0\Aplicação de exemplo\POSExample\POSExample\obj\Debug\POSExample.csprojAssemblyReference.cache
+C:\Users\Teste\OneDrive\Kits\POS_TEF_S920v4.0.64.0_PAX_PTI_2.0.5.0\Aplicação de exemplo\POSExample\POSExample\obj\Debug\MainWindow.g.cs
+C:\Users\Teste\OneDrive\Kits\POS_TEF_S920v4.0.64.0_PAX_PTI_2.0.5.0\Aplicação de exemplo\POSExample\POSExample\obj\Debug\App.g.cs
+C:\Users\Teste\OneDrive\Kits\POS_TEF_S920v4.0.64.0_PAX_PTI_2.0.5.0\Aplicação de exemplo\POSExample\POSExample\obj\Debug\POSExample_MarkupCompile.cache
+C:\Users\Teste\OneDrive\Kits\POS_TEF_S920v4.0.64.0_PAX_PTI_2.0.5.0\Aplicação de exemplo\POSExample\POSExample\obj\Debug\POSExample_MarkupCompile.lref
+C:\Users\Teste\OneDrive\Kits\POS_TEF_S920v4.0.64.0_PAX_PTI_2.0.5.0\Aplicação de exemplo\POSExample\POSExample\obj\Debug\MainWindow.baml
+C:\Users\Teste\OneDrive\Kits\POS_TEF_S920v4.0.64.0_PAX_PTI_2.0.5.0\Aplicação de exemplo\POSExample\POSExample\obj\Debug\POSExample.g.resources
+C:\Users\Teste\OneDrive\Kits\POS_TEF_S920v4.0.64.0_PAX_PTI_2.0.5.0\Aplicação de exemplo\POSExample\POSExample\obj\Debug\POSExample.Properties.Resources.resources
+C:\Users\Teste\OneDrive\Kits\POS_TEF_S920v4.0.64.0_PAX_PTI_2.0.5.0\Aplicação de exemplo\POSExample\POSExample\obj\Debug\POSExample.csproj.GenerateResource.cache
+C:\Users\Teste\OneDrive\Kits\POS_TEF_S920v4.0.64.0_PAX_PTI_2.0.5.0\Aplicação de exemplo\POSExample\POSExample\obj\Debug\POSExample.csproj.CoreCompileInputs.cache
+C:\Users\Teste\OneDrive\Kits\POS_TEF_S920v4.0.64.0_PAX_PTI_2.0.5.0\Aplicação de exemplo\POSExample\POSExample\obj\Debug\POSExample.exe
+C:\Users\Teste\OneDrive\Kits\POS_TEF_S920v4.0.64.0_PAX_PTI_2.0.5.0\Aplicação de exemplo\POSExample\POSExample\obj\Debug\POSExample.pdb
+C:\GitHubPosPayGo\PayGoPOS_CSharp\POSExample\bin\Debug\POSExample.exe.config
+C:\GitHubPosPayGo\PayGoPOS_CSharp\POSExample\bin\Debug\POSExample.exe
+C:\GitHubPosPayGo\PayGoPOS_CSharp\POSExample\bin\Debug\POSExample.pdb
+C:\GitHubPosPayGo\PayGoPOS_CSharp\POSExample\obj\Debug\POSExample.csprojAssemblyReference.cache
+C:\GitHubPosPayGo\PayGoPOS_CSharp\POSExample\obj\Debug\MainWindow.g.cs
+C:\GitHubPosPayGo\PayGoPOS_CSharp\POSExample\obj\Debug\App.g.cs
+C:\GitHubPosPayGo\PayGoPOS_CSharp\POSExample\obj\Debug\POSExample_MarkupCompile.cache
+C:\GitHubPosPayGo\PayGoPOS_CSharp\POSExample\obj\Debug\POSExample_MarkupCompile.lref
+C:\GitHubPosPayGo\PayGoPOS_CSharp\POSExample\obj\Debug\MainWindow.baml
+C:\GitHubPosPayGo\PayGoPOS_CSharp\POSExample\obj\Debug\POSExample.g.resources
+C:\GitHubPosPayGo\PayGoPOS_CSharp\POSExample\obj\Debug\POSExample.Properties.Resources.resources
+C:\GitHubPosPayGo\PayGoPOS_CSharp\POSExample\obj\Debug\POSExample.csproj.GenerateResource.cache
+C:\GitHubPosPayGo\PayGoPOS_CSharp\POSExample\obj\Debug\POSExample.csproj.CoreCompileInputs.cache
+C:\GitHubPosPayGo\PayGoPOS_CSharp\POSExample\obj\Debug\POSExample.exe
+C:\GitHubPosPayGo\PayGoPOS_CSharp\POSExample\obj\Debug\POSExample.pdb
