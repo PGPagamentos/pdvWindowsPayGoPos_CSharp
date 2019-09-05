@@ -33,6 +33,31 @@ namespace POSExample
         private string appVersion = "Aplicacao exemplo 1.0";
         private string appWorkingPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location) + "\\PayGoPOS";
 
+        Dictionary<int, string> PTIRET_MSG = new Dictionary<int, string>()
+        {
+            {(int)ClassPOSPGW.PTIRET.ERRO_INTERNO, "Erro desta aplicação"},
+            {(int)ClassPOSPGW.PTIRET.PTIRET_INVPARAM, "Parametro invalido"},
+            {(int)ClassPOSPGW.PTIRET.PTIRET_NOCONN, "Terminal offline"},
+            {(int)ClassPOSPGW.PTIRET.PTIRET_BUSY, "Terminal ocupado \r processando outro comando"},
+            {(int)ClassPOSPGW.PTIRET.PTIRET_TIMEOUT, "Timeout"},
+            {(int)ClassPOSPGW.PTIRET.PTIRET_CANCEL, "Tecla[CANCEL] pressionada"},
+            {(int)ClassPOSPGW.PTIRET.PTIRET_NODATA, "Informação nao avaliavel"},
+            {(int)ClassPOSPGW.PTIRET.PTIRET_BUFOVRFLW, "Dados maiores \r que o buffer"},
+            {(int)ClassPOSPGW.PTIRET.PTIRET_SOCKETERR, "Erro de Socket"},
+            {(int)ClassPOSPGW.PTIRET.PTIRET_WRITEERR, "Nao consegue acessar \r o diretorio"},
+            {(int)ClassPOSPGW.PTIRET.PTIRET_EFTERR, "Operacao EFT foi completada,\r mas  falhou"},
+            {(int)ClassPOSPGW.PTIRET.PTIRET_INTERNALERR, "Erro interno da DLL"},
+            {(int)ClassPOSPGW.PTIRET.PTIRET_PROTOCOLERR, "Erro de comunicacao entre \r a DLL e o  terminal"},
+            {(int)ClassPOSPGW.PTIRET.PTIRET_SECURITYERR, "Funcao falhou devido \r a problemas de seguranca"},
+            {(int)ClassPOSPGW.PTIRET.PTIRET_PRINTERR, "Erro  de Impressora"},
+            {(int)ClassPOSPGW.PTIRET.PTIRET_NOPAPER, "Terminou o papel da \r impressora"},
+            {(int)ClassPOSPGW.PTIRET.PTIRET_NEWCONN, "Novo terminal conectado"},
+            {(int)ClassPOSPGW.PTIRET.PTIRET_NONEWCONN, "Sem recebimento de \r novas conexões"},
+            {(int)ClassPOSPGW.PTIRET.PTIRET_NOTSUPPORTED, "Funcao nao suportada \r pelo terminal"},
+            {(int)ClassPOSPGW.PTIRET.PTIRET_CRYPTERR, "Erro na encriptacao \r de dados "},
+
+
+        };
         Thread t;
 
         public MainWindow()
@@ -90,8 +115,7 @@ namespace POSExample
 
             short key = 99;
             short ret = 99;
-            short selectedOption = -1;
-            ushort status = 99;
+            
             System.Text.StringBuilder amount = new System.Text.StringBuilder(30);
             System.Text.StringBuilder mac = new System.Text.StringBuilder(30);
             System.Text.StringBuilder model = new System.Text.StringBuilder(30);
@@ -104,122 +128,22 @@ namespace POSExample
             ClassPOSPGW.PTI_WaitKey(terminalId, 5, ref key, ref ret);
 
             //Consulta informações do terminal através da função PTI_CheckStatus:
-            ClassPOSPGW.PTI_CheckStatus(terminalId, ref status, model, mac, serialnumber, ref ret);
+            //ClassPOSPGW.PTI_CheckStatus(terminalId, ref status, model, mac, serialnumber, ref ret);
 
             //Mostra ao usuário os dados obtidos através da função PTI_CheckStatus:
-            ClassPOSPGW.PTI_Display(terminalId, "SERIAL: " + serialnumber + "\rMAC: " + mac + "\rMODELO: " + model, ref ret);
+            //ClassPOSPGW.PTI_Display(terminalId, "SERIAL: " + serialnumber + "\rMAC: " + mac + "\rMODELO: " + model, ref ret);
+
+
+            bool retorno = false;
+
+            retorno = MenuPrincipal(terminalId);
+
+
+
 
             //Usa função de aguardar tecla para deixar mensagem anterior na tela por 5 segundos:
             ClassPOSPGW.PTI_WaitKey(terminalId, 5, ref key, ref ret);
 
-            ClassPOSPGW.PTI_Display(terminalId, "PRESSIONE UMA TECLA", ref ret);
-
-            //Usa função de aguardar tecla para deixar mensagem anterior na tela por 5 segundos:
-            ClassPOSPGW.PTI_WaitKey(terminalId, 5, ref key, ref ret);
-
-            //Mostra ao usuário a tecla pressionada:
-            ClassPOSPGW.PTI_Display(terminalId, "TECLA PRESSIONADA: " + key, ref ret);
-
-            //Usa função de aguardar tecla para deixar mensagem anterior na tela por 5 segundos:
-            ClassPOSPGW.PTI_WaitKey(terminalId, 5, ref key, ref ret);
-
-            //Inicia função de menu:
-            ClassPOSPGW.PTI_StartMenu(terminalId, ref ret);
-            //Adiciona opção 1 do menu:
-            ClassPOSPGW.PTI_AddMenuOption(terminalId, "OPCAO 1", ref ret);
-            //Adiciona opção 2 ao menu:
-            ClassPOSPGW.PTI_AddMenuOption(terminalId, "OPCAO 2", ref ret);
-            //Executa o menu:
-            ClassPOSPGW.PTI_ExecMenu(terminalId, "SELECIONE A OPCAO", 30, ref selectedOption, ref ret);
-
-            if(selectedOption == 190)
-            {
-                //Mostra para o usuário que nenhuma opção foi selecionada:
-                ClassPOSPGW.PTI_Display(terminalId, "NENHUMA OPCAO \rSELECIONADA", ref ret);
-            }
-            else
-            {
-                //Mostra para o usuário a opção selecionada por ele:
-                ClassPOSPGW.PTI_Display(terminalId, "OPCAO SELECIONADA: " + selectedOption, ref ret);
-            }
-
-            //Usa função de aguardar tecla para deixar mensagem anterior na tela por 5 segundos:
-            ClassPOSPGW.PTI_WaitKey(terminalId, 5, ref key, ref ret);
-
-            //Obtém do usuário o valor da transação:
-            ClassPOSPGW.PTI_GetData(terminalId, "DIGITE O VALOR DO PAGAMENTO", "@@@.@@@,@@", 3, 8, false, false, false, 30, amount, 2, ref ret);
-
-            //Inicia transação de pagamento:
-            ClassPOSPGW.PTI_EFT_Start(terminalId, (int)ClassPOSPGW.PWOPER.PWOPER_SALE, ref ret);
-            //Insere parâmetro "moeda":
-            ClassPOSPGW.PTI_EFT_AddParam(terminalId, (int)ClassPOSPGW.PWINFO.PWINFO_CURRENCY, "986", ref ret);
-            //Insere parâmetro "valor":
-            ClassPOSPGW.PTI_EFT_AddParam(terminalId, (int)ClassPOSPGW.PWINFO.PWINFO_TOTAMNT, amount.ToString(), ref ret);
-            //Executa transação:
-            ClassPOSPGW.PTI_EFT_Exec(terminalId, ref ret);
-
-            if (ret == 0)// Transação autorizada
-            {
-
-                try
-                {
-                    List<string> responseObject = new List<string>();
-                    uint[] responseFields = Array.ConvertAll((uint[])(Enum.GetValues(typeof(ClassPOSPGW.PWINFO))), Convert.ToUInt32);
-                    foreach (int field in responseFields)
-                    {
-
-                        int intStringBuilderSize = 32000;
-                        StringBuilder sb = new StringBuilder(intStringBuilderSize);
-                        string str = "";
-                        ClassPOSPGW.PTI_EFT_GetInfo(terminalId, field, intStringBuilderSize, sb, ref ret);
-                        str = sb.ToString();
-
-                        responseObject.Add(Enum.GetName(typeof(ClassPOSPGW.PWINFO), field) + " = " + str);
-
-                    }
-
-                    string transactionData = string.Join("\r", responseObject);
-
-                    //Impressão de texto:
-                    ClassPOSPGW.PTI_Print(terminalId, transactionData.Substring(0,700), ref ret);
-
-                    //Imppressão de código de barras:
-                    ClassPOSPGW.PTI_PrnSymbolCode(terminalId, "0123456789", 2, ref ret);
-
-                    //Impressão de QR Code
-                    ClassPOSPGW.PTI_PrnSymbolCode(terminalId, "http://www.ntk.com.br", 4, ref ret);
-
-                    //Feed de papel:
-                    ClassPOSPGW.PTI_PrnFeed(terminalId, ref ret);
-
-                }
-                catch (Exception){ }
-
-                //Impressão do comprovante da transação:
-                ClassPOSPGW.PTI_EFT_PrintReceipt(terminalId, 3, ref ret);
-
-                ClassPOSPGW.PTI_Beep(terminalId, 0, ref ret);
-
-                //Exemplo de menu:
-                ClassPOSPGW.PTI_StartMenu(terminalId, ref ret);
-                ClassPOSPGW.PTI_AddMenuOption(terminalId, "SIM", ref ret);
-                ClassPOSPGW.PTI_AddMenuOption(terminalId, "NAO", ref ret);
-                ClassPOSPGW.PTI_ExecMenu(terminalId, "CONFIRMA TRANSACAO?", 30, ref selectedOption, ref ret);
-
-                if (selectedOption == 0)
-                {
-                    ClassPOSPGW.PTI_EFT_Confirm(terminalId, (short)ClassPOSPGW.PTICNF.PTICNF_SUCCESS, ref ret);
-                }
-                else
-                {
-                    ClassPOSPGW.PTI_EFT_Confirm(terminalId, (short)ClassPOSPGW.PTICNF.PTICNF_OTHERERR, ref ret);
-                }
-
-            }
-            else
-            {
-                ClassPOSPGW.PTI_Beep(terminalId, 1, ref ret);
-            }
 
             ClassPOSPGW.PTI_Disconnect(terminalId, 0, ref ret);
 
@@ -272,11 +196,336 @@ namespace POSExample
             currentNumberOfTerminals = 0;
         }
 
+
         private void Window_Closed(object sender, EventArgs e)
         {
             btnParar_Click(null, null);
 
             Application.Current.Shutdown();
+        }
+
+        public bool MenuPrincipal(string terminalId)
+        {
+                      
+            short ret = 99;
+            short selectedOption = -1;
+            System.Text.StringBuilder amount = new System.Text.StringBuilder(30);
+
+            //Inicia função de menu:
+            ClassPOSPGW.PTI_StartMenu(terminalId, ref ret);
+            //Adiciona opção 1 do menu:
+            ClassPOSPGW.PTI_AddMenuOption(terminalId, "Operacoes", ref ret);
+            //Adiciona opção 2 ao menu:
+            ClassPOSPGW.PTI_AddMenuOption(terminalId, "Captura de Dados", ref ret);
+            //Adiciona opção 3 ao menu:
+            ClassPOSPGW.PTI_AddMenuOption(terminalId, "Impressao", ref ret);
+
+
+            //Executa o menu:
+            ClassPOSPGW.PTI_ExecMenu(terminalId, "SELECIONE A OPCAO", 30, ref selectedOption, ref ret);
+
+            if(selectedOption == 190)
+            {
+                //Mostra para o usuário que nenhuma opção foi selecionada:
+                ClassPOSPGW.PTI_Display(terminalId, "NENHUMA OPCAO \rSELECIONADA", ref ret);
+            }
+            else
+            {
+                //Mostra para o usuário a opção selecionada por ele:
+                //ClassPOSPGW.PTI_Display(terminalId, "OPCAO SELECIONADA: " + selectedOption, ref ret);
+                if (selectedOption == 0) // menu de operacoes
+                {
+                    MenuOperacoes(terminalId);
+
+                }
+                else if (selectedOption == 1)
+                {
+                    MenuCaptura(terminalId);
+                }               
+                else if (selectedOption == 2)
+                {        
+                    MenuImpressao(terminalId);
+                }
+            }
+
+            return false;
+        }
+
+        public void MenuOperacoes(string terminalId)
+        {
+
+            short key = 99;
+            short ret = 99;
+            short selectedOption = -1;
+            System.Text.StringBuilder amount = new System.Text.StringBuilder(30);
+
+            //Inicia função de menu:
+            ClassPOSPGW.PTI_StartMenu(terminalId, ref ret);
+
+            //Adiciona opção 1 ao menu:
+            ClassPOSPGW.PTI_AddMenuOption(terminalId, "Venda", ref ret);
+            //Adiciona opção 1 ao menu:
+            ClassPOSPGW.PTI_AddMenuOption(terminalId, "Cancelamento", ref ret);
+            //Adiciona opção 1 ao menu:
+            ClassPOSPGW.PTI_AddMenuOption(terminalId, "Administrativa", ref ret);
+
+
+            //Executa o menu:
+            ClassPOSPGW.PTI_ExecMenu(terminalId, "SELECIONE A OPCAO", 30, ref selectedOption, ref ret);
+
+            if (selectedOption == 0) // menu de venda
+            {
+                OperacaoVenda(terminalId);
+
+            }
+            else if (selectedOption == 1) // cancelamento
+                {
+                //Usa função de aguardar tecla para deixar mensagem anterior na tela por 5 segundos:
+                ClassPOSPGW.PTI_WaitKey(terminalId, 5, ref key, ref ret);
+
+                ClassPOSPGW.PTI_Display(terminalId, "Cancelamento nao imp. : \rPRESSIONE UMA TECLA", ref ret);
+
+                //Usa função de aguardar tecla para deixar mensagem anterior na tela por 5 segundos:
+                ClassPOSPGW.PTI_WaitKey(terminalId, 5, ref key, ref ret);
+
+            }
+            else if (selectedOption == 2) // Funcao Administrativa
+                    {
+                //Usa função de aguardar tecla para deixar mensagem anterior na tela por 5 segundos:
+                ClassPOSPGW.PTI_WaitKey(terminalId, 5, ref key, ref ret);
+
+                ClassPOSPGW.PTI_Display(terminalId, "F. Administrativa nao imp : \rPRESSIONE UMA TECLA", ref ret);
+
+                //Usa função de aguardar tecla para deixar mensagem anterior na tela por 5 segundos:
+                ClassPOSPGW.PTI_WaitKey(terminalId, 5, ref key, ref ret);
+
+                    }
+        }
+
+
+        public void MenuImpressao(string terminalId)
+        {
+
+            short key = 99;
+            short ret = 99;
+            short selectedOption = -1;
+            System.Text.StringBuilder amount = new System.Text.StringBuilder(30);
+
+            //Inicia função de menu:
+            ClassPOSPGW.PTI_StartMenu(terminalId, ref ret);
+
+
+            //Adiciona opção 1 ao menu:
+            ClassPOSPGW.PTI_AddMenuOption(terminalId, "PrintReceipt", ref ret);
+            //Adiciona opção 2 ao menu:
+            ClassPOSPGW.PTI_AddMenuOption(terminalId, "Display", ref ret);
+            //Adiciona opção 3 ao menu:
+            ClassPOSPGW.PTI_AddMenuOption(terminalId, "Print", ref ret);
+            //Adiciona opção 4 ao menu:
+            ClassPOSPGW.PTI_AddMenuOption(terminalId, "PrnSymbolCode", ref ret);
+
+
+
+            //Executa o menu:
+            ClassPOSPGW.PTI_ExecMenu(terminalId, "SELECIONE A OPCAO", 30, ref selectedOption, ref ret);
+
+            if (selectedOption == 0) // Imprime Recibo
+            {
+                ClassPOSPGW.PTI_EFT_PrintReceipt(terminalId, 3, ref ret);
+
+                //testar o retorno e imprimir mensagem de acordo.
+
+                if (ret != (short)ClassPOSPGW.PTIRET.PTIRET_OK)
+                {
+                    ErrorMessage(ret, terminalId);
+                }
+
+                ClassPOSPGW.PTI_Beep(terminalId, 0, ref ret);
+
+            }
+            else if (selectedOption == 1) // Imprime na tela
+            {
+                //Usa função de aguardar tecla para deixar mensagem anterior na tela por 5 segundos:
+                ClassPOSPGW.PTI_WaitKey(terminalId, 5, ref key, ref ret);
+
+                ClassPOSPGW.PTI_Display(terminalId, "PTI_Display nao imp. : \rPRESSIONE UMA TECLA", ref ret);
+
+                //Usa função de aguardar tecla para deixar mensagem anterior na tela por 5 segundos:
+                ClassPOSPGW.PTI_WaitKey(terminalId, 5, ref key, ref ret);
+
+
+                }
+            else if (selectedOption == 2) // Imprime na impressora
+                {
+                //Usa função de aguardar tecla para deixar mensagem anterior na tela por 5 segundos:
+                ClassPOSPGW.PTI_WaitKey(terminalId, 5, ref key, ref ret);
+
+                ClassPOSPGW.PTI_Display(terminalId, "PTI_Print nao imp : \rPRESSIONE UMA TECLA", ref ret);
+
+                //Usa função de aguardar tecla para deixar mensagem anterior na tela por 5 segundos:
+                ClassPOSPGW.PTI_WaitKey(terminalId, 5, ref key, ref ret);
+
+                }
+            else if (selectedOption == 3) // imprime codigo de barras ou qr code
+            {
+                //Usa função de aguardar tecla para deixar mensagem anterior na tela por 5 segundos:
+                ClassPOSPGW.PTI_WaitKey(terminalId, 5, ref key, ref ret);
+
+                ClassPOSPGW.PTI_Display(terminalId, "PTI_PrnSymbolCode nao imp : \rPRESSIONE UMA TECLA", ref ret);
+
+                //Usa função de aguardar tecla para deixar mensagem anterior na tela por 5 segundos:
+                ClassPOSPGW.PTI_WaitKey(terminalId, 5, ref key, ref ret);
+
+            }
+        }
+
+        
+        public void MenuCaptura(string terminalId)
+        {
+
+            short key = 99;
+            short ret = 99;
+            short selectedOption = -1;
+            
+
+            //Inicia função de menu:
+            ClassPOSPGW.PTI_StartMenu(terminalId, ref ret);
+
+
+            
+            //Adiciona opção 1 ao menu:
+            ClassPOSPGW.PTI_AddMenuOption(terminalId, "Dados Mascarados", ref ret);
+            //Adiciona opção 2 ao menu:
+            ClassPOSPGW.PTI_AddMenuOption(terminalId, "Dados Nao Masc.", ref ret);
+            
+
+            //Executa o menu:
+            ClassPOSPGW.PTI_ExecMenu(terminalId, "SELECIONE A OPCAO", 30, ref selectedOption, ref ret);
+
+            
+            if (selectedOption == 0) // Dados Masc.
+            {
+                //Usa função de aguardar tecla para deixar mensagem anterior na tela por 5 segundos:
+                ClassPOSPGW.PTI_WaitKey(terminalId, 5, ref key, ref ret);
+
+                ClassPOSPGW.PTI_Display(terminalId, "Dados Mascarados nao imp. : \rPRESSIONE UMA TECLA", ref ret);
+
+                //Usa função de aguardar tecla para deixar mensagem anterior na tela por 5 segundos:
+                ClassPOSPGW.PTI_WaitKey(terminalId, 5, ref key, ref ret);
+
+
+            }
+            else if (selectedOption == 1) // Dados Nao Masc.
+            {
+                //Usa função de aguardar tecla para deixar mensagem anterior na tela por 5 segundos:
+                ClassPOSPGW.PTI_WaitKey(terminalId, 5, ref key, ref ret);
+
+                ClassPOSPGW.PTI_Display(terminalId, "Dados Nao Mascarados : \rPRESSIONE UMA TECLA", ref ret);
+
+                //Usa função de aguardar tecla para deixar mensagem anterior na tela por 5 segundos:
+                ClassPOSPGW.PTI_WaitKey(terminalId, 5, ref key, ref ret);
+
+            }
+            
+        }
+
+        public void OperacaoVenda(string terminalId)
+        {
+            short ret = 99;            
+            System.Text.StringBuilder amount = new System.Text.StringBuilder(30);
+
+            ////////////
+            //Obtém do usuário o valor da transação:
+            ClassPOSPGW.PTI_GetData(terminalId, "DIGITE O VALOR DO PAGAMENTO:\r", "@@@.@@@,@@", 3, 8, false, false, false, 30, amount, 2, ref ret);
+
+            //Inicia transação de pagamento:
+            ClassPOSPGW.PTI_EFT_Start(terminalId, (int)ClassPOSPGW.PWOPER.PWOPER_SALE, ref ret);
+            //Insere parâmetro "moeda":
+            ClassPOSPGW.PTI_EFT_AddParam(terminalId, (int)ClassPOSPGW.PWINFO.PWINFO_CURRENCY, "986", ref ret);
+            //Insere parâmetro "valor":
+            ClassPOSPGW.PTI_EFT_AddParam(terminalId, (int)ClassPOSPGW.PWINFO.PWINFO_TOTAMNT, amount.ToString(), ref ret);
+            //Executa transação:
+            ClassPOSPGW.PTI_EFT_Exec(terminalId, ref ret);
+
+            if (ret == 0)// Transação autorizada
+            {
+                //Impressão do comprovante da transação:
+                ClassPOSPGW.PTI_EFT_PrintReceipt(terminalId, 3, ref ret);
+
+
+                OperacaoConfirmacao(terminalId);
+                ////////////
+
+            }
+            else // mensagem de erro
+            {
+               ErrorMessage(ret, terminalId); 
+            }
+        }
+
+        public void OperacaoConfirmacao(string terminalId)
+        {
+            short key = 99;
+            short ret = 99;
+            short selectedOption = -1;
+
+            // Confirmação
+            ClassPOSPGW.PTI_StartMenu(terminalId, ref ret);
+            ClassPOSPGW.PTI_AddMenuOption(terminalId, "SIM", ref ret);
+            ClassPOSPGW.PTI_AddMenuOption(terminalId, "NAO", ref ret);
+            ClassPOSPGW.PTI_ExecMenu(terminalId, "CONFIRMA TRANSACAO?", 30, ref selectedOption, ref ret);
+
+            if (selectedOption == 0)
+            {
+                ClassPOSPGW.PTI_EFT_Confirm(terminalId, (short)ClassPOSPGW.PTICNF.PTICNF_SUCCESS, ref ret);
+                ClassPOSPGW.PTI_Display(terminalId, "Transacao Confirmada : \rPRESSIONE UMA TECLA", ref ret);
+
+                //Usa função de aguardar tecla para deixar mensagem anterior na tela por 5 segundos:
+                ClassPOSPGW.PTI_WaitKey(terminalId, 5, ref key, ref ret);
+
+            }
+            else
+            {
+                ClassPOSPGW.PTI_EFT_Confirm(terminalId, (short)ClassPOSPGW.PTICNF.PTICNF_OTHERERR, ref ret);
+                ClassPOSPGW.PTI_EFT_Confirm(terminalId, (short)ClassPOSPGW.PTICNF.PTICNF_SUCCESS, ref ret);
+                ClassPOSPGW.PTI_Display(terminalId, "Transacao Nao Confirmada : \rPRESSIONE UMA TECLA", ref ret);
+
+            }
+
+            ////////////
+
+        }
+
+
+
+        public void ImpressaoPTI_EFT_PrintReceipt(string terminalId)
+        {
+            short ret = 99;
+
+            ClassPOSPGW.PTI_EFT_PrintReceipt(terminalId, 3, ref ret);
+
+            //testar o retorno e imprimir mensagem de acordo.
+
+            if (ret != (short)ClassPOSPGW.PTIRET.PTIRET_OK)
+            {
+                ErrorMessage(ret, terminalId);
+        }
+
+            ClassPOSPGW.PTI_Beep(terminalId, 0, ref ret);
+
+        }
+
+        public void ErrorMessage(int iIdMessage, string terminalId)
+        {
+            short key = 99;
+            short ret = 99;
+
+            string msg;
+            msg = PTIRET_MSG[iIdMessage] + "\rPRESSIONE UMA TECLA";
+            ClassPOSPGW.PTI_Display(terminalId, msg , ref ret);
+
+            //Usa função de aguardar tecla para deixar mensagem anterior na tela por 5 segundos:
+            ClassPOSPGW.PTI_WaitKey(terminalId, 5, ref key, ref ret);
         }
     }
 }
