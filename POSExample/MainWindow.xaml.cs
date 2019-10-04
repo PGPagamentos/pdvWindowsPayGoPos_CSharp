@@ -429,6 +429,7 @@ namespace POSExample
             
         }
 
+        // Executa a transação de venda
         public void OperacaoVenda(string terminalId)
         {
             short ret = 99;            
@@ -453,7 +454,7 @@ namespace POSExample
                 ClassPOSPGW.PTI_EFT_PrintReceipt(terminalId, 3, ref ret);
 
 
-                OperacaoConfirmacao(terminalId);
+                OperacaoConfirmacao(terminalId); // confirmação da ransação de venda
                 ////////////
 
             }
@@ -462,20 +463,21 @@ namespace POSExample
                ErrorMessage(ret, terminalId); 
             }
         }
-
+        
+        // Confirma a última Transação realizada.  
         public void OperacaoConfirmacao(string terminalId)
         {
             short key = 99;
             short ret = 99;
             short selectedOption = -1;
 
-            // Confirmação
+            // Monta Menu de Confirmação
             ClassPOSPGW.PTI_StartMenu(terminalId, ref ret);
             ClassPOSPGW.PTI_AddMenuOption(terminalId, "SIM", ref ret);
             ClassPOSPGW.PTI_AddMenuOption(terminalId, "NAO", ref ret);
             ClassPOSPGW.PTI_ExecMenu(terminalId, "CONFIRMA TRANSACAO?", 30, ref selectedOption, ref ret);
 
-            if (selectedOption == 0)
+            if (selectedOption == 0) // Confirma a Transação
             {
                 ClassPOSPGW.PTI_EFT_Confirm(terminalId, (short)ClassPOSPGW.PTICNF.PTICNF_SUCCESS, ref ret);
                 ClassPOSPGW.PTI_Display(terminalId, "Transacao Confirmada : \rPRESSIONE UMA TECLA", ref ret);
@@ -484,10 +486,10 @@ namespace POSExample
                 ClassPOSPGW.PTI_WaitKey(terminalId, 5, ref key, ref ret);
 
             }
-            else
+            else // Nao Confirma a transação
             {
                 ClassPOSPGW.PTI_EFT_Confirm(terminalId, (short)ClassPOSPGW.PTICNF.PTICNF_OTHERERR, ref ret);
-                ClassPOSPGW.PTI_EFT_Confirm(terminalId, (short)ClassPOSPGW.PTICNF.PTICNF_SUCCESS, ref ret);
+                //ClassPOSPGW.PTI_EFT_Confirm(terminalId, (short)ClassPOSPGW.PTICNF.PTICNF_SUCCESS, ref ret);
                 ClassPOSPGW.PTI_Display(terminalId, "Transacao Nao Confirmada : \rPRESSIONE UMA TECLA", ref ret);
 
             }
