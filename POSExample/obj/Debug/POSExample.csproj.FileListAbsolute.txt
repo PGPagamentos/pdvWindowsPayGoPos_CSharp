@@ -44,6 +44,7 @@ C:\GitHubPosPayGo\PayGoPOS_CSharp\POSExample\obj\Debug\POSExample.pdb
 C:\GitHubPosPayGo\pdvWindowsPayGoPos_CSharp\POSExample\bin\Debug\POSExample.exe.config
 C:\GitHubPosPayGo\pdvWindowsPayGoPos_CSharp\POSExample\bin\Debug\POSExample.exe
 C:\GitHubPosPayGo\pdvWindowsPayGoPos_CSharp\POSExample\bin\Debug\POSExample.pdb
+C:\GitHubPosPayGo\pdvWindowsPayGoPos_CSharp\POSExample\obj\Debug\POSExample.csprojAssemblyReference.cache
 C:\GitHubPosPayGo\pdvWindowsPayGoPos_CSharp\POSExample\obj\Debug\MainWindow.g.cs
 C:\GitHubPosPayGo\pdvWindowsPayGoPos_CSharp\POSExample\obj\Debug\App.g.cs
 C:\GitHubPosPayGo\pdvWindowsPayGoPos_CSharp\POSExample\obj\Debug\POSExample_MarkupCompile.cache

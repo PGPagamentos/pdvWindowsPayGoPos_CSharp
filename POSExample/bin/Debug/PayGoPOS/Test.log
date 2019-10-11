@@ -2425,3 +2425,8 @@
 18:31:12 089  [Disconnect]
 18:31:12 094  PTI_End ()
 18:31:12 100  [Disconnect]
+16:02:20 328  PTI_Init <0002.0000.0005.0000> <NTK Solutions> <Aplicacao exemplo 1.0> <24> <C:\GitHubPosPayGo\pdvWindowsPayGoPos_CSharp\POSExample\bin\Debug\PayGoPOS> <10000> <50> <> <0>
+16:11:59 801  PTI_Init <0002.0000.0005.0000> <NTK Solutions> <Aplicacao exemplo 1.0> <24> <C:\GitHubPosPayGo\pdvWindowsPayGoPos_CSharp\POSExample\bin\Debug\PayGoPOS> <10000> <50> <> <0>
+16:41:43 634  PTI_Init <0002.0000.0005.0000> <NTK Solutions> <Aplicacao exemplo 1.0> <24> <C:\GitHubPosPayGo\pdvWindowsPayGoPos_CSharp\POSExample\bin\Debug\PayGoPOS> <10000> <50> <> <0>
+17:45:33 105  PTI_Init <0002.0000.0005.0000> <NTK Solutions> <Aplicacao exemplo 1.0> <24> <C:\GitHubPosPayGo\pdvWindowsPayGoPos_CSharp\POSExample\bin\Debug\PayGoPOS> <10000> <50> <> <0>
+17:51:49 494  PTI_Init <0002.0000.0005.0000> <NTK Solutions> <Aplicacao exemplo 1.0> <24> <C:\GitHubPosPayGo\pdvWindowsPayGoPos_CSharp\POSExample\bin\Debug\PayGoPOS> <10000> <50> <> <0>
