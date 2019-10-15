@@ -34,6 +34,13 @@ namespace POSExample
         private string appVersion = "Aplicacao exemplo 1.0";
         private string appWorkingPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location) + "\\PayGoPOS";
 
+
+        //=====================================================================================
+        //     Estrutura     :  PTIRET_MSG
+        //
+        //     Descricao     :  Dicionario utilizado pela funcao ErrorMessage
+        //
+        //=====================================================================================
         Dictionary<int, string> PTIRET_MSG = new Dictionary<int, string>()
         {
             {(int)ClassPOSPGW.PTIRET.ERRO_INTERNO, "Erro desta aplicação"},
@@ -67,6 +74,17 @@ namespace POSExample
 
         }
 
+        //=====================================================================================
+        //     Funcao     :  WaitForTerminalConnection
+        //
+        //     Descricao  :  Thread que gerencia a conexão com os POS.
+        //
+        //     Entradas   :  nao ha.
+        //
+        //     Saidas     :  nao ha.
+        //
+        //     Retorno    :  nao ha.
+        //===========================================================
         private void WaitForTerminalConnection()
         {
             while (isRunning)
@@ -91,8 +109,8 @@ namespace POSExample
                         termInfo.mac = mac.ToString();
                         termInfo.serialNumber = serialNumber.ToString();
 
-                        Thread t = new Thread(TerminalResponseThread);
-                        t.Start(termInfo);
+                        Thread thr = new Thread(TerminalResponseThread);
+                        thr.Start(termInfo);
                     }
                 }
                 catch (Exception)
@@ -106,17 +124,31 @@ namespace POSExample
             }
         }
 
+        //=====================================================================================
+        //     Funcao     :  TerminalResponseThread
+        //
+        //     Descricao  :  Método que implementa a Thread associada ao POS.
+        //
+        //     Entradas   :  
+        //                  - receivedObject : informaçoes de definição da Thread
+        //
+        //     Saidas     :  nao ha.
+        //
+        //     Retorno    :  nao ha.
+        //===========================================================
         private void TerminalResponseThread(object receivedObject)
         {
             ClassTerminalInformation termInfo = (ClassTerminalInformation)receivedObject;
             string terminalId = termInfo.terminalId;
 
             Debug.Print("Inicio da Thread (" + Thread.CurrentThread.ManagedThreadId + " - " + terminalId + "): " + DateTime.Now.ToShortTimeString());
+            WriteLog("\n--------------------------------------");
+            WriteLog("Inicio da Thread (" + Thread.CurrentThread.ManagedThreadId + " - " + terminalId + "): " + DateTime.Now.ToShortTimeString() + "\n");
             currentNumberOfTerminals = currentNumberOfTerminals + 1;
 
             short key = 99;
             short ret = 99;
-            
+
             System.Text.StringBuilder amount = new System.Text.StringBuilder(30);
             System.Text.StringBuilder mac = new System.Text.StringBuilder(30);
             System.Text.StringBuilder model = new System.Text.StringBuilder(30);
@@ -148,12 +180,27 @@ namespace POSExample
 
             ClassPOSPGW.PTI_Disconnect(terminalId, 0, ref ret);
 
+
             currentNumberOfTerminals = currentNumberOfTerminals - 1;
+            WriteLog("Final da Thread(" + Thread.CurrentThread.ManagedThreadId + " - " + terminalId + "): " + DateTime.Now.ToShortTimeString());
 
             Debug.Print("Final da Thread (" + Thread.CurrentThread.ManagedThreadId + " - " + terminalId + "): " + DateTime.Now.ToShortTimeString());
-            
+
+            PrintResultParams(terminalId);
         }
 
+        //=====================================================================================
+        //     Funcao     :  btnLimpaLog_Click
+        //
+        //     Descricao  :  Método que implementa a funcionalidade do botão iniciar.
+        //
+        //     Entradas   :  
+        //                  - terminalId : identificador do terminal
+        //
+        //     Saidas     :  nao ha.
+        //
+        //     Retorno    :  nao ha.
+        //===========================================================
         private void btnIniciar_Click(object sender, RoutedEventArgs e)
         {
             currentNumberOfTerminals = 0;
@@ -172,14 +219,14 @@ namespace POSExample
 
                 WriteLog("PTI_Init ");
 
-                WriteLog("");
+                WriteLog("\n");
 
                 WriteLog("pszPOS_Company......: " + appCompany);
                 WriteLog("pszPOS_Version......: " + appVersion);
                 WriteLog("pszDataFolder.......: " + appWorkingPath);
                 WriteLog("uiTCP_Port..........: " + appListeningPort.ToString());
                 WriteLog("uiMaxTerminals......: " + maxNumberOfTerminals.ToString());
-                
+
 
 
 
@@ -196,10 +243,23 @@ namespace POSExample
             }
         }
 
+        //=====================================================================================
+        //     Funcao     :  btnLimpaLog_Click
+        //
+        //     Descricao  :  Método que implementa a funcionalidade do botão parar.
+        //
+        //     Entradas   :  
+        //                  - terminalId : identificador do terminal
+        //
+        //     Saidas     :  nao ha.
+        //
+        //     Retorno    :  nao ha.
+        //====================================================================================         
         private void btnParar_Click(object sender, RoutedEventArgs e)
         {
             try
             {
+               
                 t.Abort();
             }
             catch (Exception) { }
@@ -207,6 +267,8 @@ namespace POSExample
 
             isRunning = false;
 
+            WriteLog("\n---------------------------------------------------------");
+            WriteLog("\nPTI_End : Uso da biblioteca de integração foi Encerrado");
             ClassPOSPGW.PTI_End();
 
             btnParar.IsEnabled = false;
@@ -214,21 +276,76 @@ namespace POSExample
             currentNumberOfTerminals = 0;
         }
 
+        //=====================================================================================
+        //     Funcao     :  btnLimpaLog_Click
+        //
+        //     Descricao  :  Método que implementa a funcionalidade do botão de limpeza de log.
+        //
+        //     Entradas   :  
+        //                  - terminalId : identificador do terminal
+        //
+        //     Saidas     :  nao ha.
+        //
+        //     Retorno    :  nao ha.
+        //====================================================================================        
+        private void btnLimpaLog_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                this.lstBoxLog.Items.Clear();
+            }
+            catch (Exception) { }
 
+            btnLimpaLog.IsEnabled = false;
+            btnLimpaLog.IsEnabled = true;
+
+        }
+
+        //=====================================================================================
+        //     Funcao     :  Window_Closed
+        //
+        //     Descricao  :  Método executado quando é fechada a janela da aplicação.
+        //
+        //     Entradas   :  
+        //                  - terminalId : identificador do terminal
+        //
+        //     Saidas     :  nao ha.
+        //
+        //     Retorno    :  nao ha.
+        //====================================================================================        
         private void Window_Closed(object sender, EventArgs e)
         {
             btnParar_Click(null, null);
 
+            // encerra a aplicação
             Application.Current.Shutdown();
+            
+            // Mata o executável
+            System.Environment.Exit(0);
         }
 
+        //=====================================================================================
+        //     Funcao     :  MenuPrincipal
+        //
+        //     Descricao  :  Seleciona o menu a ser executado.
+        //
+        //     Entradas   :  
+        //                  - terminalId : identificador do terminal
+        //
+        //     Saidas     :  nao ha.
+        //
+        //     Retorno    :  booleano.
+        //====================================================================================        
         public bool MenuPrincipal(string terminalId)
         {
-                      
+
             short ret = 99;
             short key = 99;
             short selectedOption = -1;
             System.Text.StringBuilder amount = new System.Text.StringBuilder(30);
+
+            WriteLog("\n---------------------------------");
+            WriteLog("MenuPrincipal:\n");
 
 
             while (true)
@@ -252,6 +369,8 @@ namespace POSExample
                 if (ret == (int)ClassPOSPGW.PTIRET.PTIRET_TIMEOUT)
                 {
                     ClassPOSPGW.PTI_Display(terminalId, "Tempo de Espera \r  Esgotado(TIMEOUT)", ref ret);
+                    WriteLog("\n---------------------------------");
+                    WriteLog("Tempo de Espera Esgotado(TIMEOUT)");
                     // Usa função de aguardar tecla para deixar mensagem anterior na tela por 5 segundos:
                     ClassPOSPGW.PTI_WaitKey(terminalId, 5, ref key, ref ret);
                     return false;
@@ -264,22 +383,41 @@ namespace POSExample
                     //ClassPOSPGW.PTI_Display(terminalId, "OPCAO SELECIONADA: " + selectedOption, ref ret);
                     if (selectedOption == 0) // menu de operacoes
                     {
+                        WriteLog("\n");
+                        WriteLog("Selecionado MenuOperacoes:\n");
+
                         MenuOperacoes(terminalId);
 
                     }
                     else if (selectedOption == 1)
                     {
+                        WriteLog("\n");
+                        WriteLog("Selecionado MenuCaptura:\n");
                         MenuCaptura(terminalId);
                     }
                     else if (selectedOption == 2)
                     {
+                        WriteLog("\n");
+                        WriteLog("Selecionado MenuImpressao:\n");
                         MenuImpressao(terminalId);
                     }
                 }
             }
-                
+
         }
 
+        //=====================================================================================
+        //     Funcao     :  MenuOperacoes
+        //
+        //     Descricao  :  Seleciona o tipo de operacao a ser realizado.
+        //
+        //     Entradas   :  
+        //                  - terminalId : identificador do terminal
+        //
+        //     Saidas     :  nao ha.
+        //
+        //     Retorno    :  booleano.
+        //====================================================================================        
         public bool MenuOperacoes(string terminalId)
         {
 
@@ -288,62 +426,78 @@ namespace POSExample
             short selectedOption = -1;
             System.Text.StringBuilder amount = new System.Text.StringBuilder(30);
 
-            while (true)
-            {
-                //Inicia função de menu:
-                ClassPOSPGW.PTI_StartMenu(terminalId, ref ret);
+            //Inicia função de menu:
+            ClassPOSPGW.PTI_StartMenu(terminalId, ref ret);
 
-                //Adiciona opção 1 ao menu:
-                ClassPOSPGW.PTI_AddMenuOption(terminalId, "Venda", ref ret);
-                //Adiciona opção 2 ao menu:
-                ClassPOSPGW.PTI_AddMenuOption(terminalId, "Cancelamento", ref ret);
-                //Adiciona opção 3 ao menu:
-                ClassPOSPGW.PTI_AddMenuOption(terminalId, "Administrativa", ref ret);
-                //Adiciona opção 4 ao menu:
-                ClassPOSPGW.PTI_AddMenuOption(terminalId, "Retornar", ref ret);
+            WriteLog("\n---------------------------------");
+            WriteLog("MenuOperacoes:\n");
 
-
-                //Executa o menu:
-                ClassPOSPGW.PTI_ExecMenu(terminalId, "SELECIONE A OPCAO", 30, ref selectedOption, ref ret);
-
-                if (ret == (int)ClassPOSPGW.PTIRET.PTIRET_TIMEOUT)
-                {
-                    ClassPOSPGW.PTI_Display(terminalId, "Tempo de Espera \r  Esgotado(TIMEOUT)", ref ret);
-                    // Usa função de aguardar tecla para deixar mensagem anterior na tela por 5 segundos:
-                    ClassPOSPGW.PTI_WaitKey(terminalId, 5, ref key, ref ret);
-                    return false;
-
-                }
-                else
-                {
-                    if (selectedOption == 0) // menu de venda
-                    {
-                        OperacaoVenda(terminalId);
-                        
-                    }
-                    else if (selectedOption == 1) // cancelamento
-                    {
-                        Cancelamento(terminalId);
-                        //Usa função de aguardar tecla para deixar mensagem anterior na tela por 5 segundos:
-                        ClassPOSPGW.PTI_WaitKey(terminalId, 5, ref key, ref ret);
-
-                    }
-                    else if (selectedOption == 2) // Funcao Administrativa
-                    {
-                        OperacaoAdmin(terminalId);
-
-                    }
-                    else if (selectedOption == 3) // Retorna
-                    {
-
-                        return false;
-                    }
-                }
-            }
+            //Adiciona opção 1 ao menu:
+            ClassPOSPGW.PTI_AddMenuOption(terminalId, "Venda", ref ret);
+            //Adiciona opção 2 ao menu:
+            ClassPOSPGW.PTI_AddMenuOption(terminalId, "Cancelamento", ref ret);
+            //Adiciona opção 3 ao menu:
+            ClassPOSPGW.PTI_AddMenuOption(terminalId, "Administrativa", ref ret);
             
+                
+
+            //Executa o menu:
+            ClassPOSPGW.PTI_ExecMenu(terminalId, "SELECIONE A OPCAO", 30, ref selectedOption, ref ret);
+
+            if (ret == (int)ClassPOSPGW.PTIRET.PTIRET_TIMEOUT)
+            {
+                ClassPOSPGW.PTI_Display(terminalId, "Tempo de Espera \r  Esgotado(TIMEOUT)", ref ret);
+                WriteLog("\n---------------------------------");
+                WriteLog("Tempo de Espera Esgotado(TIMEOUT)");
+                // Usa função de aguardar tecla para deixar mensagem anterior na tela por 5 segundos:
+                ClassPOSPGW.PTI_WaitKey(terminalId, 5, ref key, ref ret);
+                return false;
+
+            }
+            else
+            {
+                if (selectedOption == 0) // menu de venda
+                {
+                    
+                    WriteLog("Selecionado OperacaoVenda");
+
+                    OperacaoVenda(terminalId);
+
+                }
+                else if (selectedOption == 1) // cancelamento
+                {
+                    WriteLog("Selecionado Cancelamento");
+                    Cancelamento(terminalId);
+                    //Usa função de aguardar tecla para deixar mensagem anterior na tela por 5 segundos:
+                    ClassPOSPGW.PTI_WaitKey(terminalId, 5, ref key, ref ret);
+
+                }
+                else if (selectedOption == 2) // Funcao Administrativa
+                {
+                    WriteLog("Selecionado OperacaoAdmin");
+                    OperacaoAdmin(terminalId);
+
+                }
+                
+            }
+
+            return false;
+
         }
 
 
+        //=====================================================================================
+        //     Funcao     :  MenuImpressao
+        //
+        //     Descricao  :  Seleciona o tipo de impressão a ser realizado.
+        //
+        //     Entradas   :  
+        //                  - terminalId : identificador do terminal
+        //
+        //     Saidas     :  nao ha.
+        //
+        //     Retorno    :  nao ha.
+        //====================================================================================        
         public bool MenuImpressao(string terminalId)
         {
 
@@ -352,85 +506,97 @@ namespace POSExample
             short selectedOption = -1;
             System.Text.StringBuilder amount = new System.Text.StringBuilder(30);
 
-            while (true)
+            //Inicia função de menu:
+            ClassPOSPGW.PTI_StartMenu(terminalId, ref ret);
+
+            WriteLog("\n---------------------------------");
+            WriteLog("MenuImpressao:\n");
+            //Adiciona opção 1 ao menu:
+            ClassPOSPGW.PTI_AddMenuOption(terminalId, "PrintReceipt", ref ret);
+            //Adiciona opção 2 ao menu:
+            ClassPOSPGW.PTI_AddMenuOption(terminalId, "Display", ref ret);
+            //Adiciona opção 3 ao menu:
+            ClassPOSPGW.PTI_AddMenuOption(terminalId, "Print", ref ret);
+            //Adiciona opção 4 ao menu:
+            ClassPOSPGW.PTI_AddMenuOption(terminalId, "PrnSymbolCode", ref ret);
+            
+
+
+            //Executa o menu:
+            ClassPOSPGW.PTI_ExecMenu(terminalId, "SELECIONE A OPCAO", 30, ref selectedOption, ref ret);
+
+            if (ret == (int)ClassPOSPGW.PTIRET.PTIRET_TIMEOUT)
             {
-                //Inicia função de menu:
-                ClassPOSPGW.PTI_StartMenu(terminalId, ref ret);
+                ClassPOSPGW.PTI_Display(terminalId, "Tempo de Espera \r  Esgotado(TIMEOUT)", ref ret);
+                WriteLog("\n---------------------------------");
+                WriteLog("Tempo de Espera Esgotado(TIMEOUT)");
+                // Usa função de aguardar tecla para deixar mensagem anterior na tela por 5 segundos:
+                ClassPOSPGW.PTI_WaitKey(terminalId, 5, ref key, ref ret);
+                return false;
 
-
-                //Adiciona opção 1 ao menu:
-                ClassPOSPGW.PTI_AddMenuOption(terminalId, "PrintReceipt", ref ret);
-                //Adiciona opção 2 ao menu:
-                ClassPOSPGW.PTI_AddMenuOption(terminalId, "Display", ref ret);
-                //Adiciona opção 3 ao menu:
-                ClassPOSPGW.PTI_AddMenuOption(terminalId, "Print", ref ret);
-                //Adiciona opção 4 ao menu:
-                ClassPOSPGW.PTI_AddMenuOption(terminalId, "PrnSymbolCode", ref ret);
-                //Adiciona opção 5 ao menu:
-                ClassPOSPGW.PTI_AddMenuOption(terminalId, "Retorna", ref ret);
-
-
-
-                //Executa o menu:
-                ClassPOSPGW.PTI_ExecMenu(terminalId, "SELECIONE A OPCAO", 30, ref selectedOption, ref ret);
-
-                if (ret == (int)ClassPOSPGW.PTIRET.PTIRET_TIMEOUT)
-                {
-                    ClassPOSPGW.PTI_Display(terminalId, "Tempo de Espera \r  Esgotado(TIMEOUT)", ref ret);
-                    // Usa função de aguardar tecla para deixar mensagem anterior na tela por 5 segundos:
-                    ClassPOSPGW.PTI_WaitKey(terminalId, 5, ref key, ref ret);
-                    return false;
-
-                }
-                else
-                {
-                    if (selectedOption == 0) // Imprime Recibo
-                    {
-                  
-                        ImpressaoPTI_EFT_PrintReceipt(terminalId);
-
-                        ClassPOSPGW.PTI_Beep(terminalId, 0, ref ret);
-
-                    }                  
-                    else if (selectedOption == 1) // Imprime na tela
-                    {
-                        //Usa função de aguardar tecla para deixar mensagem anterior na tela por 5 segundos
-                        
-                        ClassPOSPGW.PTI_Display(terminalId, "Exemplo PTI_Display\r", ref ret);
-
-                        //Usa função de aguardar tecla para deixar mensagem anterior na tela por 5 segundos:
-                        ClassPOSPGW.PTI_WaitKey(terminalId, 5, ref key, ref ret);
-                    }
-                    else if (selectedOption == 2) // Imprime na impressora
-                    {
-                        System.Text.StringBuilder numero = new System.Text.StringBuilder(30);
-                        // Captura um Numero
-                        ClassPOSPGW.PTI_GetData(terminalId, "Numero Para Imprimir:\r", "@@@@@@", 3, 8, false, false, false, 30, numero, 2, ref ret);
-                        string sPrint = "";
-
-                        // Numero Digitado:
-                        sPrint =  "PTI_Print Informado: " + numero.ToString();
-                        // Impressão do Numero:
-                        ClassPOSPGW.PTI_Print(terminalId, sPrint, ref ret);
-
-                        // Avança Papel na Impressora
-                        ClassPOSPGW.PTI_PrnFeed(terminalId, ref ret);
-                        ClassPOSPGW.PTI_PrnFeed(terminalId, ref ret);
-
-                    }
-                    else if (selectedOption == 3) // imprime codigo de barras ou qr code
-                    {
-                        MenuImpressaoPrnSymbolCode(terminalId);
-
-                    }
-                    else if (selectedOption == 4) // Retorna
-                    {
-                        return false;
-                    }
-                }
             }
+            else
+            {
+                if (selectedOption == 0) // Imprime Recibo
+                {
+
+                    WriteLog("Selecionado PrintReceipt");
+                    ImpressaoPTI_EFT_PrintReceipt(terminalId);
+
+                    ClassPOSPGW.PTI_Beep(terminalId, 0, ref ret);
+
+                }
+                else if (selectedOption == 1) // Imprime na tela
+                {
+                    //Usa função de aguardar tecla para deixar mensagem anterior na tela por 5 segundos         
+                    WriteLog("Selecionado Display");
+                    ClassPOSPGW.PTI_Display(terminalId, "Exemplo PTI_Display\r", ref ret);
+
+                    //Usa função de aguardar tecla para deixar mensagem anterior na tela por 5 segundos:
+                    ClassPOSPGW.PTI_WaitKey(terminalId, 5, ref key, ref ret);
+                }
+                else if (selectedOption == 2) // Imprime na impressora
+                {
+                    System.Text.StringBuilder numero = new System.Text.StringBuilder(30);
+                    // Captura um Numero
+                    WriteLog("Selecionado Print");
+                    ClassPOSPGW.PTI_GetData(terminalId, "Numero Para Imprimir:\r", "@@@@@@", 3, 8, false, false, false, 30, numero, 2, ref ret);
+                    string sPrint = "";
+
+                    // Numero Digitado:
+                    sPrint = "PTI_Print Informado: " + numero.ToString();
+                    // Impressão do Numero:
+                    ClassPOSPGW.PTI_Print(terminalId, sPrint, ref ret);
+
+                    // Avança Papel na Impressora
+                    ClassPOSPGW.PTI_PrnFeed(terminalId, ref ret);
+                    ClassPOSPGW.PTI_PrnFeed(terminalId, ref ret);
+
+                }
+                else if (selectedOption == 3) // imprime codigo de barras ou qr code
+                {
+                    WriteLog("Selecionado MenuImpressaoPrnSymbolCode\n");
+                    MenuImpressaoPrnSymbolCode(terminalId);
+
+                }
+             
+            }
+
+            return false;  
         }
 
+        //=====================================================================================
+        //     Funcao     :  MenuImpressaoPrnSymbolCode
+        //
+        //     Descricao  :  Seleciona e executa as impressões de QrCode ou de código de barras.
+        //
+        //     Entradas   :  
+        //                  - terminalId : identificador do terminal
+        //
+        //     Saidas     :  nao ha.
+        //
+        //     Retorno    :  nao ha.
+        //====================================================================================        
         public bool MenuImpressaoPrnSymbolCode(string terminalId)
         {
 
@@ -439,71 +605,79 @@ namespace POSExample
             short selectedOption = -1;
             System.Text.StringBuilder amount = new System.Text.StringBuilder(30);
 
-            while (true)
+
+            //Inicia função de menu:
+            ClassPOSPGW.PTI_StartMenu(terminalId, ref ret);
+            WriteLog("\n---------------------------------");
+            WriteLog("MenuImpressaoPrnSymbolCode:\n");
+
+            //Adiciona opção 1 ao menu:
+            ClassPOSPGW.PTI_AddMenuOption(terminalId, "QR Code", ref ret);
+            //Adiciona opção 2 ao menu:
+            ClassPOSPGW.PTI_AddMenuOption(terminalId, "Codigo Barras", ref ret);
+            
+
+
+            //Executa o menu:
+            ClassPOSPGW.PTI_ExecMenu(terminalId, "SELECIONE A OPCAO", 30, ref selectedOption, ref ret);
+
+            if (ret == (int)ClassPOSPGW.PTIRET.PTIRET_TIMEOUT)
             {
-                //Inicia função de menu:
-                ClassPOSPGW.PTI_StartMenu(terminalId, ref ret);
+                ClassPOSPGW.PTI_Display(terminalId, "Tempo de Espera \r  Esgotado(TIMEOUT)", ref ret);
+                WriteLog("\n---------------------------------");
+                WriteLog("Tempo de Espera Esgotado(TIMEOUT)");
+                // Usa função de aguardar tecla para deixar mensagem anterior na tela por 5 segundos:
+                ClassPOSPGW.PTI_WaitKey(terminalId, 5, ref key, ref ret);
+                return false;
 
-
-                //Adiciona opção 1 ao menu:
-                ClassPOSPGW.PTI_AddMenuOption(terminalId, "QR Code", ref ret);
-                //Adiciona opção 2 ao menu:
-                ClassPOSPGW.PTI_AddMenuOption(terminalId, "Codigo Barras", ref ret);
-                //Adiciona opção 3 ao menu:
-                ClassPOSPGW.PTI_AddMenuOption(terminalId, "Retorna", ref ret);
-
-
-        
-                //Executa o menu:
-                ClassPOSPGW.PTI_ExecMenu(terminalId, "SELECIONE A OPCAO", 30, ref selectedOption, ref ret);
-
-                if (ret == (int)ClassPOSPGW.PTIRET.PTIRET_TIMEOUT)
-                {
-                    ClassPOSPGW.PTI_Display(terminalId, "Tempo de Espera \r  Esgotado(TIMEOUT)", ref ret);
-                    // Usa função de aguardar tecla para deixar mensagem anterior na tela por 5 segundos:
-                    ClassPOSPGW.PTI_WaitKey(terminalId, 5, ref key, ref ret);
-                    return false;
-
-                }
-                else
-                {
-                    if (selectedOption == 0) // Imprime QRCode
-                    {
-                        
-
-                        ClassPOSPGW.PTI_PrnSymbolCode(terminalId, "http://www.ntk.com.br", 4, ref ret);
-
-                        //Avança algumas linhas do papel da impressora:
-                        ClassPOSPGW.PTI_PrnFeed(terminalId, ref ret);
-
-
-                        ClassPOSPGW.PTI_Beep(terminalId, 0, ref ret);
-
-                    }
-                    else if (selectedOption == 1) // Imprime Codigo de Barras
-                    {
-                        ClassPOSPGW.PTI_PrnSymbolCode(terminalId, "0123456789", 2, ref ret);
-
-                        //Avança algumas linhas do papel da impressora:
-                        ClassPOSPGW.PTI_PrnFeed(terminalId, ref ret);
-
-
-                        ClassPOSPGW.PTI_Beep(terminalId, 0, ref ret);
-
-
-                    }
-                    else if (selectedOption == 2) // Retorna
-                    {
-                        return false;
-                    }
-                }
             }
+            else
+            {
+                if (selectedOption == 0) // Imprime QRCode
+                {
+
+                    WriteLog("Selecionado QR Code");
+                    ClassPOSPGW.PTI_PrnSymbolCode(terminalId, "http://www.ntk.com.br", 4, ref ret);
+
+                    //Avança algumas linhas do papel da impressora:
+                    ClassPOSPGW.PTI_PrnFeed(terminalId, ref ret);
+
+
+                    ClassPOSPGW.PTI_Beep(terminalId, 0, ref ret);
+
+                }
+                else if (selectedOption == 1) // Imprime Codigo de Barras
+                {
+
+                    WriteLog("Selecionado Codigo Barras");
+                    ClassPOSPGW.PTI_PrnSymbolCode(terminalId, "0123456789", 2, ref ret);
+
+                    //Avança algumas linhas do papel da impressora:
+                    ClassPOSPGW.PTI_PrnFeed(terminalId, ref ret);
+
+
+                    ClassPOSPGW.PTI_Beep(terminalId, 0, ref ret);
+
+
+                }
+                
+            }
+            return false;    
         }
 
-
-    
-
-
+        
+        //=====================================================================================
+        //     Funcao     :  MenuCaptura
+        //
+        //     Descricao  :  Seleciona e executa as capturas de dados.
+        //
+        //     Entradas   :  
+        //                  - terminalId : identificador do terminal
+        //
+        //     Saidas     :  nao ha.
+        //
+        //     Retorno    :  nao ha.
+        //====================================================================================        
         public bool MenuCaptura(string terminalId)
         {
 
@@ -513,78 +687,90 @@ namespace POSExample
             
 
             WriteLog("\n---------------------------------");
-            WriteLog("\nCaptura de Dados:\n");
+            WriteLog("MenuCaptura:\n");
             
 
-            while (true)
+            
+            //Inicia função de menu:
+            ClassPOSPGW.PTI_StartMenu(terminalId, ref ret);
+
+            //Adiciona opção 1 ao menu:
+            ClassPOSPGW.PTI_AddMenuOption(terminalId, "Dados Mascarados", ref ret);
+            //Adiciona opção 2 ao menu:
+            ClassPOSPGW.PTI_AddMenuOption(terminalId, "Dados Nao Masc.", ref ret);
+           
+
+            //Executa o menu:
+            ClassPOSPGW.PTI_ExecMenu(terminalId, "SELECIONE A OPCAO", 30, ref selectedOption, ref ret);
+
+            if (ret == (int)ClassPOSPGW.PTIRET.PTIRET_TIMEOUT)
             {
-                //Inicia função de menu:
-                ClassPOSPGW.PTI_StartMenu(terminalId, ref ret);
+                ClassPOSPGW.PTI_Display(terminalId, "Tempo de Espera \r  Esgotado(TIMEOUT)", ref ret);
+                WriteLog("\n---------------------------------");
+                WriteLog("Tempo de Espera Esgotado(TIMEOUT)");
+                // Usa função de aguardar tecla para deixar mensagem anterior na tela por 5 segundos:
+                ClassPOSPGW.PTI_WaitKey(terminalId, 5, ref key, ref ret);
+                return false;
 
-                //Adiciona opção 1 ao menu:
-                ClassPOSPGW.PTI_AddMenuOption(terminalId, "Dados Mascarados", ref ret);
-                //Adiciona opção 2 ao menu:
-                ClassPOSPGW.PTI_AddMenuOption(terminalId, "Dados Nao Masc.", ref ret);
-                //Adiciona opção 3 ao menu:
-                ClassPOSPGW.PTI_AddMenuOption(terminalId, "Retorna", ref ret);
-
-
-                //Executa o menu:
-                ClassPOSPGW.PTI_ExecMenu(terminalId, "SELECIONE A OPCAO", 30, ref selectedOption, ref ret);
-
-                if (ret == (int)ClassPOSPGW.PTIRET.PTIRET_TIMEOUT)
-                {
-                    ClassPOSPGW.PTI_Display(terminalId, "Tempo de Espera \r  Esgotado(TIMEOUT)", ref ret);
-                    // Usa função de aguardar tecla para deixar mensagem anterior na tela por 5 segundos:
-                    ClassPOSPGW.PTI_WaitKey(terminalId, 5, ref key, ref ret);
-                    return false;
-
-                }
-                else
-                {
-                    if (selectedOption == 0) // Dados Masc.
-                    {
-
-                        System.Text.StringBuilder pszData = new System.Text.StringBuilder(30);
-                        ClassPOSPGW.PTI_GetData(terminalId, "CPF C/Mascara\r" , "@@@.@@@.@@@-@@", 11, 11, false, false, true, 30, pszData, 2, ref ret);
-                        string sData= pszData.ToString();
-                        WriteLog("\n");
-                        WriteLog("CPF Com Mascara Capturado: " + sData + " - Terminal: " + terminalId);
-                        WriteLog("\n");
-                        //Usa função de aguardar tecla para deixar mensagem anterior na tela por 5 segundos:
-                        ClassPOSPGW.PTI_WaitKey(terminalId, 5, ref key, ref ret);
-
-
-                    }
-                    else if (selectedOption == 1) // Dados Nao Masc.
-                    {
-
-                        System.Text.StringBuilder pszData = new System.Text.StringBuilder(30);
-                        ClassPOSPGW.PTI_GetData(terminalId, "CPF S/Mascara\r", "@@@.@@@.@@@-@@", 11, 11, true, false, false, 30, pszData, 2, ref ret);
-                        string sData = pszData.ToString();
-                        WriteLog("\n");
-                        WriteLog("CPF Sem Mascara Capturado: " + sData + " - Terminal: " + terminalId);
-                        WriteLog("\n");
-                        //Usa função de aguardar tecla para deixar mensagem anterior na tela por 5 segundos:
-                        ClassPOSPGW.PTI_WaitKey(terminalId, 5, ref key, ref ret);
-
-                    }
-                    else if (selectedOption == 2) // Dados Nao Masc.
-                    {
-                        return false;
-                    }
-                }
             }
+            else
+            {
+                if (selectedOption == 0) // Dados Masc.
+                {
+
+                    WriteLog("Selecionado Dados Mascarados:");
+                    System.Text.StringBuilder pszData = new System.Text.StringBuilder(30);
+                    ClassPOSPGW.PTI_GetData(terminalId, "CPF C/Mascara\r" , "@@@.@@@.@@@-@@", 11, 11, false, false, true, 30, pszData, 2, ref ret);
+                    string sData= pszData.ToString();
+                    WriteLog("\n");
+                    WriteLog("CPF Com Mascara Capturado: " + sData + " - Terminal: " + terminalId);
+                    WriteLog("\n");
+                    //Usa função de aguardar tecla para deixar mensagem anterior na tela por 5 segundos:
+                    ClassPOSPGW.PTI_WaitKey(terminalId, 5, ref key, ref ret);
+
+
+                }
+                else if (selectedOption == 1) // Dados Nao Masc.
+                {
+                    WriteLog("Selecionado Dados Nao Masc.:");
+                    System.Text.StringBuilder pszData = new System.Text.StringBuilder(30);
+                    ClassPOSPGW.PTI_GetData(terminalId, "CPF S/Mascara\r", "@@@.@@@.@@@-@@", 11, 11, true, false, false, 30, pszData, 2, ref ret);
+                    string sData = pszData.ToString();
+                    WriteLog("\n");
+                    WriteLog("CPF Sem Mascara Capturado: " + sData + " - Terminal: " + terminalId);
+                    WriteLog("\n");
+                    //Usa função de aguardar tecla para deixar mensagem anterior na tela por 5 segundos:
+                    ClassPOSPGW.PTI_WaitKey(terminalId, 5, ref key, ref ret);
+
+                }   
+            }
+            return false;
             
         }
 
 
-   
-        // Executa a transação de venda
+
+        
+        //=====================================================================================
+        //     Funcao     :  OperacaoVenda
+        //
+        //     Descricao  :  Executa a transação de venda.
+        //
+        //     Entradas   :  
+        //                  - terminalId : identificador do terminal
+        //
+        //     Saidas     :  nao ha.
+        //
+        //     Retorno    :  nao ha.
+        //==================================================================================== 
         public void OperacaoVenda(string terminalId)
         {
             short ret = 99;            
             System.Text.StringBuilder amount = new System.Text.StringBuilder(30);
+
+            WriteLog("\n---------------------------------");
+            WriteLog("OperacaoVenda\n");
+
 
             ////////////
             //Obtém do usuário o valor da transação:
@@ -601,7 +787,7 @@ namespace POSExample
 
             if (ret == 0)// Transação autorizada
             {
-
+                WriteLog("Transação autorizada\n");
                 PrintResultParams(terminalId);
                 //Impressão do comprovante da transação:
                 //ClassPOSPGW.PTI_EFT_PrintReceipt(terminalId, 3, ref ret);
@@ -613,6 +799,7 @@ namespace POSExample
             }
             else // mensagem de erro
             {
+                WriteLog("Transação com erro\n");
                 ErrorMessage(ret, terminalId);
                 // Transação Pendente ou Falhou
 
@@ -627,11 +814,23 @@ namespace POSExample
 
             }
         }
-        
-        // Confirma a última Transação realizada.  
+
+      
+        //=====================================================================================
+        //     Funcao     :  OperacaoConfirmacao
+        //
+        //     Descricao  :  Confirma a última Transação realizada..
+        //
+        //     Entradas   :  
+        //                  - terminalId : identificador do terminal
+        //
+        //     Saidas     :  nao ha.
+        //
+        //     Retorno    :  nao ha.
+        //==================================================================================== 
         public void OperacaoConfirmacao(string terminalId)
         {
-            short key = 99;
+           
             short ret = 99;
             short selectedOption = -1;
 
@@ -641,21 +840,25 @@ namespace POSExample
             ClassPOSPGW.PTI_AddMenuOption(terminalId, "NAO", ref ret);
             ClassPOSPGW.PTI_ExecMenu(terminalId, "CONFIRMA TRANSACAO?", 30, ref selectedOption, ref ret);
 
+            WriteLog("\n---------------------------------");
+            WriteLog("OperacaoConfirmacao\n");
+
             if (selectedOption == 0) // Confirma a Transação
             {
                 ClassPOSPGW.PTI_EFT_Confirm(terminalId, (short)ClassPOSPGW.PTICNF.PTICNF_SUCCESS, ref ret);
-                ClassPOSPGW.PTI_Display(terminalId, "Transacao Confirmada : \rPRESSIONE UMA TECLA", ref ret);
+                ClassPOSPGW.PTI_Display(terminalId, "Transacao Confirmada\r", ref ret);
+                WriteLog("\nTransacao Confirmada\n");
 
-                //Usa função de aguardar tecla para deixar mensagem anterior na tela por 5 segundos:
-                ClassPOSPGW.PTI_WaitKey(terminalId, 5, ref key, ref ret);
+                PrintResultParams(terminalId);
 
             }
             else // Nao Confirma a transação
             {
                 ClassPOSPGW.PTI_EFT_Confirm(terminalId, (short)ClassPOSPGW.PTICNF.PTICNF_OTHERERR, ref ret);
                 //ClassPOSPGW.PTI_EFT_Confirm(terminalId, (short)ClassPOSPGW.PTICNF.PTICNF_SUCCESS, ref ret);
-                ClassPOSPGW.PTI_Display(terminalId, "Transacao Nao Confirmada : \rPRESSIONE UMA TECLA", ref ret);
-
+                WriteLog("\nTransacao Nao Confirmada\n");
+                ClassPOSPGW.PTI_Display(terminalId, "Transacao Nao Confirmada\r", ref ret);
+                PrintResultParams(terminalId);
             }
 
             ////////////
@@ -663,16 +866,31 @@ namespace POSExample
         }
 
 
-
+       
+        //=====================================================================================
+        //     Funcao     :  ImpressaoPTI_EFT_PrintReceipt
+        //
+        //     Descricao  :  Faz a impressão de recibo da última transação realizada
+        //
+        //     Entradas   :  
+        //                  - terminalId : identificador do terminal 
+        //
+        //     Saidas     :  nao ha.
+        //
+        //     Retorno    :  nao ha.
+        //====================================================================================
         public void ImpressaoPTI_EFT_PrintReceipt(string terminalId)
         {
             short ret = 99;
             short key = 99;
 
+            WriteLog("\n");
+            WriteLog("Executando ImpressaoPTI_EFT_PrintReceipt");
+
             ClassPOSPGW.PTI_EFT_PrintReceipt(terminalId, 3, ref ret);
 
             //testar o retorno e imprimir mensagem de acordo.
-
+             
         
             if (ret == (short)ClassPOSPGW.PTIRET.PTIRET_NODATA)
             {
@@ -699,7 +917,19 @@ namespace POSExample
 
         }
 
-        // Operação de cancelamento
+        
+        //=====================================================================================
+        //     Funcao     :  Cancelamento
+        //
+        //     Descricao  :  Faz o cancelamento da última transação realizada
+        //
+        //     Entradas   :  
+        //                  - terminalId : identificador do terminal 
+        //
+        //     Saidas     :  nao ha.
+        //
+        //     Retorno    :  nao ha.
+        //====================================================================================
         public void Cancelamento(string terminalId)
         {
             short ret = 99;
@@ -746,26 +976,59 @@ namespace POSExample
             }
 
         }
+
+
+
+        //=====================================================================================
+        //     Funcao     :  ErrorMessage
+        //
+        //     Descricao  :  imprime mensagem de erro no POS e na tela da aplicação.
+        //
+        //     Entradas   :  
+        //                  - terminalId : identificador do terminal
+        //                  - iIdMessage : codigo da mensagem  
+        //
+        //     Saidas     :  nao ha.
+        //
+        //     Retorno    :  nao ha.
+        //====================================================================================
         public void ErrorMessage(int iIdMessage, string terminalId)
         {
             short key = 99;
             short ret = 99;
 
             string msg;
+
+            
             msg = PTIRET_MSG[iIdMessage] + "\rPRESSIONE UMA TECLA";
+            WriteLog("\nErrorMessage :" + msg + "\n");
             ClassPOSPGW.PTI_Display(terminalId, msg , ref ret);
 
             //Usa função de aguardar tecla para deixar mensagem anterior na tela por 5 segundos:
             ClassPOSPGW.PTI_WaitKey(terminalId, 5, ref key, ref ret);
         }
 
-        
-        // Operação  administrativa
+
+         
+        //=====================================================================================
+        //     Funcao     :  OperacaoAdmin
+        //
+        //     Descricao  :  Executa a Operação  administrativa.
+        //
+        //     Entradas   :  terminalId
+        //
+        //     Saidas     :  nao ha.
+        //
+        //     Retorno    :  nao ha.
+        //====================================================================================
         public void OperacaoAdmin(string terminalId)
         {
             short ret = 99;
             short key = 99;
 
+
+            WriteLog("\n-----------------------------------------");
+            WriteLog("\nFuncao Administrativa");
 
             //Inicia transação de Cancelamento:
             ClassPOSPGW.PTI_EFT_Start(terminalId, (int)ClassPOSPGW.PWOPER.PWOPER_ADMIN, ref ret);
@@ -786,19 +1049,22 @@ namespace POSExample
             ///////
             if (ret == 0)           // Transação autorizada OK
             {
-
+               
+                WriteLog("\nFuncao Administrativa OK");
                 PrintResultParams(terminalId);
                 ClassPOSPGW.PTI_Display(terminalId, "Operacao Administrativa OK: ", ref ret);
+
+                OperacaoConfirmacao(terminalId);
+                PrintResultParams(terminalId);
+
 
 
             }
             else
-            {                             
-                // Impressão do comprovante da transação:
-                //                ClassPOSPGW.PTI_EFT_PrintReceipt(terminalId, 3, ref ret);
-
-                // sinal sonoro
-                //              ClassPOSPGW.PTI_Beep(terminalId, 0, ref ret);
+            {
+                
+                WriteLog("\nFuncao Administrativa Nao OK");
+                ErrorMessage(ret,terminalId);
                 PrintResultParams(terminalId);
                 OperacaoConfirmacao(terminalId);
 
@@ -810,47 +1076,31 @@ namespace POSExample
 
         }
 
-        ///////////////////////////////
-        /*
+        
         //=====================================================================================
-             Funcao     :  PrintResultParams
-
-             Descricao  :  Esta função exibe na tela todas as informações de resultado disponíveis
-                           no momento em que foi chamada.
-
-             Entradas   :  nao ha.
-
-             Saidas     :  nao ha.
-
-             Retorno    :  nao ha.
-          }
-        =====================================================================================
-        ////////////////////////////
-        */
-
+        //     Funcao     :  PrintResultParams
+        //
+        //     Descricao  :  Esta função exibe na tela todas as informações de resultado disponíveis
+        //                   no momento em que foi chamada.
+        //
+        //     Entradas   :  terminalId
+        //
+        //     Saidas     :  nao ha.
+        //
+        //     Retorno    :  nao ha.
+        //====================================================================================
         public void PrintResultParams(string terminalId)
         {
             short ret = 99;
             //short key = 99;
 
             int I=0;
-            //int Ir=0;
             string volta="";
-
-            //int iRet;
             string retorno="";
-            //string retornoMemo="";
             string WTexto="";
             string WTextoMemo="";
             int Wmax=0;
 
-            //char[] pszValue = new char[2048];
-
-            //Inicia transação de Cancelamento:
-            //         ClassPOSPGW.PTI_EFT_Start(terminalId, (int)ClassPOSPGW.PWOPER.PWOPER_ADMIN, ref ret);
-
-
-            //////////////////////
             I = 0;
             WTexto = "";
             Wmax = 32000;
@@ -865,17 +1115,8 @@ namespace POSExample
                     continue;
                 }
 
-
-                /*
-                      CPT_GetpszValue = record
-                            pszValue: Array[0..2048] of AnsiChar;
-                       end;
-                       PSZ_GetpszValue = Array[0..0] of CPT_GetpszValue; 
-                */
-
+            
                 StringBuilder pszValue =  new StringBuilder(2048);
-                
-
 
                 ClassPOSPGW.PTI_EFT_GetInfo(terminalId, I, 2048, pszValue, ref ret);
 
@@ -895,32 +1136,31 @@ namespace POSExample
 
             WriteLog(WTextoMemo);
 
-
-
-            /////////////////////////////
-
-
-
-
-
         }
 
+
+        //=====================================================================================
+        //     Funcao     :  WriteLog
+        //
+        //     Descricao  :  Insere informações no Log
+        //
+        //     Entradas   :  sLine : informacao a ser inserida no LOG.
+        //
+        //     Saidas     :  nao ha.
+        //
+        //     Retorno    :  nao ha.
+        //=====================================================================================
         public void WriteLog(string sLine)
         {
-
-
-            string _input = sLine;
+           string _input = sLine;
             ////////////////////////////
             using (StringReader reader = new StringReader(_input))
             {
-                // Loop over the lines in the string.
-                //int count = 0;
+                
                 string line;
                 while ((line = reader.ReadLine()) != null)
                 {
-                    //count++;
-                    //Console.WriteLine("Line {0}: {1}", count, line);
-                    
+                                    
                     this.Dispatcher.Invoke(() =>
                     {
                         this.lstBoxLog.Items.Add(line);
@@ -931,7 +1171,18 @@ namespace POSExample
 
         }
 
-
+        // descricao textual dos codigos de retorno
+        //=====================================================================================
+        //     Funcao     :  WriteLog
+        //
+        //     Descricao  :  descricao textual dos codigos de retorno
+        //
+        //     Entradas   :  wIdentificador : codigo de retorno  
+        //
+        //     Saidas     :  nao ha.
+        //
+        //     Retorno    :  Descrição em Texto do código de retorno 
+        //=====================================================================================    
         public string pszGetInfoDescription(int wIdentificador)
         {
             switch (wIdentificador)

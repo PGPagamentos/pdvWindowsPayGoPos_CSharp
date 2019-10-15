@@ -2430,3 +2430,1116 @@
 16:41:43 634  PTI_Init <0002.0000.0005.0000> <NTK Solutions> <Aplicacao exemplo 1.0> <24> <C:\GitHubPosPayGo\pdvWindowsPayGoPos_CSharp\POSExample\bin\Debug\PayGoPOS> <10000> <50> <> <0>
 17:45:33 105  PTI_Init <0002.0000.0005.0000> <NTK Solutions> <Aplicacao exemplo 1.0> <24> <C:\GitHubPosPayGo\pdvWindowsPayGoPos_CSharp\POSExample\bin\Debug\PayGoPOS> <10000> <50> <> <0>
 17:51:49 494  PTI_Init <0002.0000.0005.0000> <NTK Solutions> <Aplicacao exemplo 1.0> <24> <C:\GitHubPosPayGo\pdvWindowsPayGoPos_CSharp\POSExample\bin\Debug\PayGoPOS> <10000> <50> <> <0>
+10:40:22 915  PTI_Init <0002.0000.0005.0000> <NTK Solutions> <Aplicacao exemplo 1.0> <24> <C:\GitHubPosPayGo\pdvWindowsPayGoPos_CSharp\POSExample\bin\Debug\PayGoPOS> <10000> <50> <> <0>
+11:09:41 988  PTI_Init <0002.0000.0005.0000> <NTK Solutions> <Aplicacao exemplo 1.0> <24> <C:\GitHubPosPayGo\pdvWindowsPayGoPos_CSharp\POSExample\bin\Debug\PayGoPOS> <10000> <50> <> <0>
+11:20:16 515  PTI_Init <0002.0000.0005.0000> <NTK Solutions> <Aplicacao exemplo 1.0> <24> <C:\GitHubPosPayGo\pdvWindowsPayGoPos_CSharp\POSExample\bin\Debug\PayGoPOS> <10000> <50> <> <0>
+12:30:28 469  PTI_Init <0002.0000.0005.0000> <NTK Solutions> <Aplicacao exemplo 1.0> <24> <C:\GitHubPosPayGo\pdvWindowsPayGoPos_CSharp\POSExample\bin\Debug\PayGoPOS> <10000> <50> <> <0>
+12:30:32 051  PTI_End ()
+12:30:32 051  [Disconnect]
+12:30:32 051  PTI_End ()
+12:30:32 052  [Disconnect]
+12:30:32 052  PTI_End ()
+12:30:32 053  [Disconnect]
+12:30:32 053  PTI_End ()
+12:30:32 053  [Disconnect]
+12:30:32 054  PTI_End ()
+12:30:32 054  [Disconnect]
+12:30:32 055  PTI_End ()
+12:30:32 055  [Disconnect]
+12:30:32 055  PTI_End ()
+12:30:32 056  [Disconnect]
+12:30:32 056  PTI_End ()
+12:30:32 057  [Disconnect]
+12:30:32 058  PTI_End ()
+12:30:32 058  [Disconnect]
+12:30:32 058  PTI_End ()
+12:30:32 059  [Disconnect]
+12:30:32 059  PTI_End ()
+12:30:32 060  [Disconnect]
+12:30:32 060  PTI_End ()
+12:30:32 060  [Disconnect]
+12:30:32 061  PTI_End ()
+12:30:32 061  [Disconnect]
+12:30:32 062  PTI_End ()
+12:30:32 062  [Disconnect]
+12:30:32 062  PTI_End ()
+12:30:32 063  [Disconnect]
+12:30:32 063  PTI_End ()
+12:30:32 064  [Disconnect]
+12:30:32 064  PTI_End ()
+12:30:32 064  [Disconnect]
+12:30:32 065  PTI_End ()
+12:30:32 065  [Disconnect]
+12:30:32 066  PTI_End ()
+12:30:32 066  [Disconnect]
+12:30:32 066  PTI_End ()
+12:30:32 067  [Disconnect]
+12:30:32 067  PTI_End ()
+12:30:32 068  [Disconnect]
+12:30:32 068  PTI_End ()
+12:30:32 068  [Disconnect]
+12:30:32 069  PTI_End ()
+12:30:32 069  [Disconnect]
+12:30:32 070  PTI_End ()
+12:30:32 070  [Disconnect]
+12:30:32 071  PTI_End ()
+12:30:32 071  [Disconnect]
+12:30:32 071  PTI_End ()
+12:30:32 072  [Disconnect]
+12:30:32 072  PTI_End ()
+12:30:32 072  [Disconnect]
+12:30:32 073  PTI_End ()
+12:30:32 073  [Disconnect]
+12:30:32 073  PTI_End ()
+12:30:32 073  [Disconnect]
+12:30:32 074  PTI_End ()
+12:30:32 074  [Disconnect]
+12:30:32 074  PTI_End ()
+12:30:32 075  [Disconnect]
+12:30:32 075  PTI_End ()
+12:30:32 076  [Disconnect]
+12:30:32 076  PTI_End ()
+12:30:32 076  [Disconnect]
+12:30:32 077  PTI_End ()
+12:30:32 077  [Disconnect]
+12:30:32 077  PTI_End ()
+12:30:32 078  [Disconnect]
+12:30:32 078  PTI_End ()
+12:30:32 079  [Disconnect]
+12:30:32 079  PTI_End ()
+12:30:32 080  [Disconnect]
+12:30:32 080  PTI_End ()
+12:30:32 080  [Disconnect]
+12:30:32 081  PTI_End ()
+12:30:32 081  [Disconnect]
+12:30:32 082  PTI_End ()
+12:30:32 082  [Disconnect]
+12:30:32 083  PTI_End ()
+12:30:32 083  [Disconnect]
+12:30:32 083  PTI_End ()
+12:30:32 084  [Disconnect]
+12:30:32 084  PTI_End ()
+12:30:32 085  [Disconnect]
+12:30:32 086  PTI_End ()
+12:30:32 086  [Disconnect]
+12:30:32 086  PTI_End ()
+12:30:32 087  [Disconnect]
+12:30:32 087  PTI_End ()
+12:30:32 088  [Disconnect]
+12:30:32 088  PTI_End ()
+12:30:32 088  [Disconnect]
+12:30:32 089  PTI_End ()
+12:30:32 089  [Disconnect]
+12:30:32 090  PTI_End ()
+12:30:32 090  [Disconnect]
+12:30:32 091  PTI_End ()
+12:30:32 091  [Disconnect]
+12:30:38 241  PTI_Init <0002.0000.0005.0000> <NTK Solutions> <Aplicacao exemplo 1.0> <24> <C:\GitHubPosPayGo\pdvWindowsPayGoPos_CSharp\POSExample\bin\Debug\PayGoPOS> <10000> <50> <> <0>
+12:30:46 704  PTI_End ()
+12:30:46 705  [Disconnect]
+12:30:46 705  PTI_End ()
+12:30:46 706  [Disconnect]
+12:30:46 706  PTI_End ()
+12:30:46 707  [Disconnect]
+12:30:46 707  PTI_End ()
+12:30:46 708  [Disconnect]
+12:30:46 708  PTI_End ()
+12:30:46 709  [Disconnect]
+12:30:46 710  PTI_End ()
+12:30:46 710  [Disconnect]
+12:30:46 711  PTI_End ()
+12:30:46 711  [Disconnect]
+12:30:46 712  PTI_End ()
+12:30:46 712  [Disconnect]
+12:30:46 713  PTI_End ()
+12:30:46 713  [Disconnect]
+12:30:46 714  PTI_End ()
+12:30:46 714  [Disconnect]
+12:30:46 715  PTI_End ()
+12:30:46 715  [Disconnect]
+12:30:46 716  PTI_End ()
+12:30:46 716  [Disconnect]
+12:30:46 716  PTI_End ()
+12:30:46 717  [Disconnect]
+12:30:46 717  PTI_End ()
+12:30:46 718  [Disconnect]
+12:30:46 718  PTI_End ()
+12:30:46 719  [Disconnect]
+12:30:46 720  PTI_End ()
+12:30:46 720  [Disconnect]
+12:30:46 721  PTI_End ()
+12:30:46 721  [Disconnect]
+12:30:46 722  PTI_End ()
+12:30:46 722  [Disconnect]
+12:30:46 723  PTI_End ()
+12:30:46 723  [Disconnect]
+12:30:46 724  PTI_End ()
+12:30:46 724  [Disconnect]
+12:30:46 725  PTI_End ()
+12:30:46 725  [Disconnect]
+12:30:46 726  PTI_End ()
+12:30:46 726  [Disconnect]
+12:30:46 727  PTI_End ()
+12:30:46 728  [Disconnect]
+12:30:46 728  PTI_End ()
+12:30:46 729  [Disconnect]
+12:30:46 729  PTI_End ()
+12:30:46 730  [Disconnect]
+12:30:46 730  PTI_End ()
+12:30:46 731  [Disconnect]
+12:30:46 731  PTI_End ()
+12:30:46 732  [Disconnect]
+12:30:46 732  PTI_End ()
+12:30:46 732  [Disconnect]
+12:30:46 733  PTI_End ()
+12:30:46 734  [Disconnect]
+12:30:46 734  PTI_End ()
+12:30:46 735  [Disconnect]
+12:30:46 735  PTI_End ()
+12:30:46 735  [Disconnect]
+12:30:46 736  PTI_End ()
+12:30:46 736  [Disconnect]
+12:30:46 739  PTI_End ()
+12:30:46 740  [Disconnect]
+12:30:46 740  PTI_End ()
+12:30:46 741  [Disconnect]
+12:30:46 741  PTI_End ()
+12:30:46 741  [Disconnect]
+12:30:46 742  PTI_End ()
+12:30:46 742  [Disconnect]
+12:30:46 743  PTI_End ()
+12:30:46 743  [Disconnect]
+12:30:46 743  PTI_End ()
+12:30:46 744  [Disconnect]
+12:30:46 744  PTI_End ()
+12:30:46 745  [Disconnect]
+12:30:46 745  PTI_End ()
+12:30:46 746  [Disconnect]
+12:30:46 746  PTI_End ()
+12:30:46 746  [Disconnect]
+12:30:46 747  PTI_End ()
+12:30:46 747  [Disconnect]
+12:30:46 748  PTI_End ()
+12:30:46 748  [Disconnect]
+12:30:46 749  PTI_End ()
+12:30:46 749  [Disconnect]
+12:30:46 750  PTI_End ()
+12:30:46 750  [Disconnect]
+12:30:46 751  PTI_End ()
+12:30:46 751  [Disconnect]
+12:30:46 752  PTI_End ()
+12:30:46 752  [Disconnect]
+12:30:46 752  PTI_End ()
+12:30:46 753  [Disconnect]
+12:30:46 753  PTI_End ()
+12:30:46 754  [Disconnect]
+12:30:46 754  PTI_End ()
+12:30:46 754  [Disconnect]
+12:30:49 281  PTI_Init <0002.0000.0005.0000> <NTK Solutions> <Aplicacao exemplo 1.0> <24> <C:\GitHubPosPayGo\pdvWindowsPayGoPos_CSharp\POSExample\bin\Debug\PayGoPOS> <10000> <50> <> <0>
+12:32:15 629  PTI_Init <0002.0000.0005.0000> <NTK Solutions> <Aplicacao exemplo 1.0> <24> <C:\GitHubPosPayGo\pdvWindowsPayGoPos_CSharp\POSExample\bin\Debug\PayGoPOS> <10000> <50> <> <0>
+12:32:18 482  PTI_End ()
+12:32:18 482  [Disconnect]
+12:32:18 483  PTI_End ()
+12:32:18 483  [Disconnect]
+12:32:18 484  PTI_End ()
+12:32:18 484  [Disconnect]
+12:32:18 486  PTI_End ()
+12:32:18 486  [Disconnect]
+12:32:18 486  PTI_End ()
+12:32:18 487  [Disconnect]
+12:32:18 487  PTI_End ()
+12:32:18 487  [Disconnect]
+12:32:18 488  PTI_End ()
+12:32:18 488  [Disconnect]
+12:32:18 489  PTI_End ()
+12:32:18 489  [Disconnect]
+12:32:18 489  PTI_End ()
+12:32:18 490  [Disconnect]
+12:32:18 490  PTI_End ()
+12:32:18 490  [Disconnect]
+12:32:18 491  PTI_End ()
+12:32:18 491  [Disconnect]
+12:32:18 492  PTI_End ()
+12:32:18 492  [Disconnect]
+12:32:18 492  PTI_End ()
+12:32:18 493  [Disconnect]
+12:32:18 493  PTI_End ()
+12:32:18 494  [Disconnect]
+12:32:18 494  PTI_End ()
+12:32:18 494  [Disconnect]
+12:32:18 495  PTI_End ()
+12:32:18 495  [Disconnect]
+12:32:18 496  PTI_End ()
+12:32:18 496  [Disconnect]
+12:32:18 497  PTI_End ()
+12:32:18 497  [Disconnect]
+12:32:18 497  PTI_End ()
+12:32:18 498  [Disconnect]
+12:32:18 498  PTI_End ()
+12:32:18 499  [Disconnect]
+12:32:18 499  PTI_End ()
+12:32:18 499  [Disconnect]
+12:32:18 500  PTI_End ()
+12:32:18 500  [Disconnect]
+12:32:18 501  PTI_End ()
+12:32:18 501  [Disconnect]
+12:32:18 501  PTI_End ()
+12:32:18 501  [Disconnect]
+12:32:18 501  PTI_End ()
+12:32:18 502  [Disconnect]
+12:32:18 502  PTI_End ()
+12:32:18 503  [Disconnect]
+12:32:18 503  PTI_End ()
+12:32:18 503  [Disconnect]
+12:32:18 504  PTI_End ()
+12:32:18 504  [Disconnect]
+12:32:18 504  PTI_End ()
+12:32:18 505  [Disconnect]
+12:32:18 505  PTI_End ()
+12:32:18 506  [Disconnect]
+12:32:18 506  PTI_End ()
+12:32:18 506  [Disconnect]
+12:32:18 507  PTI_End ()
+12:32:18 507  [Disconnect]
+12:32:18 509  PTI_End ()
+12:32:18 509  [Disconnect]
+12:32:18 510  PTI_End ()
+12:32:18 510  [Disconnect]
+12:32:18 511  PTI_End ()
+12:32:18 511  [Disconnect]
+12:32:18 511  PTI_End ()
+12:32:18 512  [Disconnect]
+12:32:18 512  PTI_End ()
+12:32:18 513  [Disconnect]
+12:32:18 513  PTI_End ()
+12:32:18 514  [Disconnect]
+12:32:18 514  PTI_End ()
+12:32:18 515  [Disconnect]
+12:32:18 515  PTI_End ()
+12:32:18 515  [Disconnect]
+12:32:18 516  PTI_End ()
+12:32:18 516  [Disconnect]
+12:32:18 517  PTI_End ()
+12:32:18 517  [Disconnect]
+12:32:18 517  PTI_End ()
+12:32:18 518  [Disconnect]
+12:32:18 518  PTI_End ()
+12:32:18 519  [Disconnect]
+12:32:18 519  PTI_End ()
+12:32:18 520  [Disconnect]
+12:32:18 520  PTI_End ()
+12:32:18 520  [Disconnect]
+12:32:18 521  PTI_End ()
+12:32:18 521  [Disconnect]
+12:32:18 522  PTI_End ()
+12:32:18 522  [Disconnect]
+12:32:18 522  PTI_End ()
+12:32:18 523  [Disconnect]
+12:32:18 523  PTI_End ()
+12:32:18 524  [Disconnect]
+13:14:26 291  PTI_Init <0002.0000.0005.0000> <NTK Solutions> <Aplicacao exemplo 1.0> <24> <C:\GitHubPosPayGo\pdvWindowsPayGoPos_CSharp\POSExample\bin\Debug\PayGoPOS> <10000> <50> <> <0>
+14:36:57 985  PTI_Init <0002.0000.0005.0000> <NTK Solutions> <Aplicacao exemplo 1.0> <24> <C:\GitHubPosPayGo\pdvWindowsPayGoPos_CSharp\POSExample\bin\Debug\PayGoPOS> <10000> <50> <> <0>
+14:38:48 546  PTI_End ()
+14:38:48 926  [Disconnect]
+14:38:48 937  PTI_End ()
+14:38:48 946  [Disconnect]
+14:38:48 953  PTI_End ()
+14:38:48 959  [Disconnect]
+14:38:48 965  PTI_End ()
+14:38:48 971  [Disconnect]
+14:38:48 977  PTI_End ()
+14:38:48 985  [Disconnect]
+14:38:48 993  PTI_End ()
+14:38:49 000  [Disconnect]
+14:38:49 001  PTI_End ()
+14:38:49 008  [Disconnect]
+14:38:49 016  PTI_End ()
+14:38:49 027  [Disconnect]
+14:38:49 039  PTI_End ()
+14:38:49 047  [Disconnect]
+14:38:49 055  PTI_End ()
+14:38:49 061  [Disconnect]
+14:38:49 067  PTI_End ()
+14:38:49 074  [Disconnect]
+14:38:49 076  PTI_End ()
+14:38:49 083  [Disconnect]
+14:38:49 088  PTI_End ()
+14:38:49 089  [Disconnect]
+14:38:49 095  PTI_End ()
+14:38:49 096  [Disconnect]
+14:38:49 102  PTI_End ()
+14:38:49 110  [Disconnect]
+14:38:49 116  PTI_End ()
+14:38:49 117  [Disconnect]
+14:38:49 123  PTI_End ()
+14:38:49 124  [Disconnect]
+14:38:49 129  PTI_End ()
+14:38:49 130  [Disconnect]
+14:38:49 137  PTI_End ()
+14:38:49 143  [Disconnect]
+14:38:49 148  PTI_End ()
+14:38:49 154  [Disconnect]
+14:38:49 160  PTI_End ()
+14:38:49 165  [Disconnect]
+14:38:49 171  PTI_End ()
+14:38:49 172  [Disconnect]
+14:38:49 173  PTI_End ()
+14:38:49 178  [Disconnect]
+14:38:49 185  PTI_End ()
+14:38:49 190  [Disconnect]
+14:38:49 197  PTI_End ()
+14:38:49 203  [Disconnect]
+14:38:49 209  PTI_End ()
+14:38:49 214  [Disconnect]
+14:38:49 221  PTI_End ()
+14:38:49 222  [Disconnect]
+14:38:49 228  PTI_End ()
+14:38:49 235  [Disconnect]
+14:38:49 241  PTI_End ()
+14:38:49 246  [Disconnect]
+14:38:49 247  PTI_End ()
+14:38:49 248  [Disconnect]
+14:38:49 256  PTI_End ()
+14:38:49 262  [Disconnect]
+14:38:49 268  PTI_End ()
+14:38:49 276  [Disconnect]
+14:38:49 283  PTI_End ()
+14:38:49 289  [Disconnect]
+14:38:49 295  PTI_End ()
+14:38:49 301  [Disconnect]
+14:38:49 306  PTI_End ()
+14:38:49 312  [Disconnect]
+14:38:49 318  PTI_End ()
+14:38:49 324  [Disconnect]
+14:38:49 329  PTI_End ()
+14:38:49 336  [Disconnect]
+14:38:49 342  PTI_End ()
+14:38:49 347  [Disconnect]
+14:38:49 353  PTI_End ()
+14:38:49 358  [Disconnect]
+14:38:49 364  PTI_End ()
+14:38:49 370  [Disconnect]
+14:38:49 376  PTI_End ()
+14:38:49 382  [Disconnect]
+14:38:49 387  PTI_End ()
+14:38:49 393  [Disconnect]
+14:38:49 399  PTI_End ()
+14:38:49 404  [Disconnect]
+14:38:49 410  PTI_End ()
+14:38:49 416  [Disconnect]
+14:38:49 423  PTI_End ()
+14:38:49 429  [Disconnect]
+14:38:49 430  PTI_End ()
+14:38:49 431  [Disconnect]
+14:38:49 440  PTI_End ()
+14:38:49 447  [Disconnect]
+14:38:49 455  PTI_End ()
+14:38:49 463  [Disconnect]
+14:38:49 471  PTI_End ()
+14:38:49 477  [Disconnect]
+14:40:46 435  PTI_Init <0002.0000.0005.0000> <NTK Solutions> <Aplicacao exemplo 1.0> <24> <C:\GitHubPosPayGo\pdvWindowsPayGoPos_CSharp\POSExample\bin\Debug\PayGoPOS> <10000> <50> <> <0>
+14:45:00 853  PTI_End ()
+14:45:00 868  [Disconnect]
+14:45:00 876  PTI_End ()
+14:45:00 881  [Disconnect]
+14:45:00 890  PTI_End ()
+14:45:00 896  [Disconnect]
+14:45:00 902  PTI_End ()
+14:45:00 908  [Disconnect]
+14:45:00 914  PTI_End ()
+14:45:00 919  [Disconnect]
+14:45:00 925  PTI_End ()
+14:45:00 931  [Disconnect]
+14:45:00 932  PTI_End ()
+14:45:00 937  [Disconnect]
+14:45:00 945  PTI_End ()
+14:45:00 946  [Disconnect]
+14:45:00 952  PTI_End ()
+14:45:00 959  [Disconnect]
+14:45:00 965  PTI_End ()
+14:45:00 975  [Disconnect]
+14:45:00 981  PTI_End ()
+14:45:00 986  [Disconnect]
+14:45:00 992  PTI_End ()
+14:45:00 994  [Disconnect]
+14:45:01 000  PTI_End ()
+14:45:01 005  [Disconnect]
+14:45:01 013  PTI_End ()
+14:45:01 021  [Disconnect]
+14:45:01 023  PTI_End ()
+14:45:01 032  [Disconnect]
+14:45:01 041  PTI_End ()
+14:45:01 048  [Disconnect]
+14:45:01 055  PTI_End ()
+14:45:01 055  [Disconnect]
+14:45:01 061  PTI_End ()
+14:45:01 072  [Disconnect]
+14:45:01 081  PTI_End ()
+14:45:01 087  [Disconnect]
+14:45:01 094  PTI_End ()
+14:45:01 100  [Disconnect]
+14:45:01 107  PTI_End ()
+14:45:01 115  [Disconnect]
+14:45:01 124  PTI_End ()
+14:45:01 125  [Disconnect]
+14:45:01 132  PTI_End ()
+14:45:01 138  [Disconnect]
+14:45:01 144  PTI_End ()
+14:45:01 145  [Disconnect]
+14:45:01 152  PTI_End ()
+14:45:01 158  [Disconnect]
+14:45:01 164  PTI_End ()
+14:45:01 169  [Disconnect]
+14:45:01 175  PTI_End ()
+14:45:01 181  [Disconnect]
+14:45:01 186  PTI_End ()
+14:45:01 192  [Disconnect]
+14:45:01 198  PTI_End ()
+14:45:01 205  [Disconnect]
+14:45:01 211  PTI_End ()
+14:45:01 216  [Disconnect]
+14:45:01 223  PTI_End ()
+14:45:01 229  [Disconnect]
+14:45:01 234  PTI_End ()
+14:45:01 240  [Disconnect]
+14:45:01 241  PTI_End ()
+14:45:01 246  [Disconnect]
+14:45:01 252  PTI_End ()
+14:45:01 258  [Disconnect]
+14:45:01 259  PTI_End ()
+14:45:01 266  [Disconnect]
+14:45:01 271  PTI_End ()
+14:45:01 278  [Disconnect]
+14:45:01 285  PTI_End ()
+14:45:01 291  [Disconnect]
+14:45:01 299  PTI_End ()
+14:45:01 304  [Disconnect]
+14:45:01 311  PTI_End ()
+14:45:01 317  [Disconnect]
+14:45:01 318  PTI_End ()
+14:45:01 323  [Disconnect]
+14:45:01 329  PTI_End ()
+14:45:01 335  [Disconnect]
+14:45:01 341  PTI_End ()
+14:45:01 346  [Disconnect]
+14:45:01 347  PTI_End ()
+14:45:01 353  [Disconnect]
+14:45:01 359  PTI_End ()
+14:45:01 360  [Disconnect]
+14:45:01 366  PTI_End ()
+14:45:01 372  [Disconnect]
+14:45:01 373  PTI_End ()
+14:45:01 374  [Disconnect]
+14:45:01 379  PTI_End ()
+14:45:01 380  [Disconnect]
+14:45:01 386  PTI_End ()
+14:45:01 393  [Disconnect]
+14:45:01 398  PTI_End ()
+14:45:01 404  [Disconnect]
+14:55:49 882  PTI_Init <0002.0000.0005.0000> <NTK Solutions> <Aplicacao exemplo 1.0> <24> <C:\GitHubPosPayGo\pdvWindowsPayGoPos_CSharp\POSExample\bin\Debug\PayGoPOS> <10000> <50> <> <0>
+14:55:56 559  PTI_End ()
+14:55:56 566  [Disconnect]
+14:55:56 572  PTI_End ()
+14:55:56 580  [Disconnect]
+14:55:56 585  PTI_End ()
+14:55:56 591  [Disconnect]
+14:55:56 601  PTI_End ()
+14:55:56 607  [Disconnect]
+14:55:56 621  PTI_End ()
+14:55:56 635  [Disconnect]
+14:55:56 649  PTI_End ()
+14:55:56 659  [Disconnect]
+14:55:56 659  PTI_End ()
+14:55:56 669  [Disconnect]
+14:55:56 679  PTI_End ()
+14:55:56 688  [Disconnect]
+14:55:56 697  PTI_End ()
+14:55:56 707  [Disconnect]
+14:55:56 716  PTI_End ()
+14:55:56 726  [Disconnect]
+14:55:56 732  PTI_End ()
+14:55:56 738  [Disconnect]
+14:55:56 744  PTI_End ()
+14:55:56 752  [Disconnect]
+14:55:56 759  PTI_End ()
+14:55:56 766  [Disconnect]
+14:55:56 772  PTI_End ()
+14:55:56 781  [Disconnect]
+14:55:56 788  PTI_End ()
+14:55:56 794  [Disconnect]
+14:55:56 799  PTI_End ()
+14:55:56 807  [Disconnect]
+14:55:56 814  PTI_End ()
+14:55:56 820  [Disconnect]
+14:55:56 828  PTI_End ()
+14:55:56 834  [Disconnect]
+14:55:56 841  PTI_End ()
+14:55:56 847  [Disconnect]
+14:55:56 853  PTI_End ()
+14:55:56 859  [Disconnect]
+14:55:56 865  PTI_End ()
+14:55:56 866  [Disconnect]
+14:55:56 871  PTI_End ()
+14:55:56 877  [Disconnect]
+14:55:56 878  PTI_End ()
+14:55:56 884  [Disconnect]
+14:55:56 892  PTI_End ()
+14:55:56 900  [Disconnect]
+14:55:56 906  PTI_End ()
+14:55:56 907  [Disconnect]
+14:55:56 912  PTI_End ()
+14:55:56 918  [Disconnect]
+14:55:56 924  PTI_End ()
+14:55:56 930  [Disconnect]
+14:55:56 935  PTI_End ()
+14:55:56 936  [Disconnect]
+14:55:56 937  PTI_End ()
+14:55:56 944  [Disconnect]
+14:55:56 949  PTI_End ()
+14:55:56 955  [Disconnect]
+14:55:56 961  PTI_End ()
+14:55:56 967  [Disconnect]
+14:55:56 972  PTI_End ()
+14:55:56 978  [Disconnect]
+14:55:56 984  PTI_End ()
+14:55:56 989  [Disconnect]
+14:55:56 996  PTI_End ()
+14:55:56 997  [Disconnect]
+14:55:57 003  PTI_End ()
+14:55:57 008  [Disconnect]
+14:55:57 010  PTI_End ()
+14:55:57 011  [Disconnect]
+14:55:57 013  PTI_End ()
+14:55:57 019  [Disconnect]
+14:55:57 025  PTI_End ()
+14:55:57 033  [Disconnect]
+14:55:57 034  PTI_End ()
+14:55:57 040  [Disconnect]
+14:55:57 046  PTI_End ()
+14:55:57 052  [Disconnect]
+14:55:57 058  PTI_End ()
+14:55:57 064  [Disconnect]
+14:55:57 069  PTI_End ()
+14:55:57 075  [Disconnect]
+14:55:57 081  PTI_End ()
+14:55:57 086  [Disconnect]
+14:55:57 087  PTI_End ()
+14:55:57 093  [Disconnect]
+14:55:57 099  PTI_End ()
+14:55:57 105  [Disconnect]
+14:55:57 110  PTI_End ()
+14:55:57 116  [Disconnect]
+14:55:57 122  PTI_End ()
+14:55:57 128  [Disconnect]
+14:55:57 133  PTI_End ()
+14:55:57 139  [Disconnect]
+14:55:57 145  PTI_End ()
+14:55:57 151  [Disconnect]
+14:55:57 157  PTI_End ()
+14:55:57 163  [Disconnect]
+18:38:14 049  PTI_Init <0002.0000.0005.0000> <NTK Solutions> <Aplicacao exemplo 1.0> <24> <C:\GitHubPosPayGo\pdvWindowsPayGoPos_CSharp\POSExample\bin\Debug\PayGoPOS> <10000> <50> <> <0>
+18:46:04 038  PTI_End ()
+18:46:04 144  [Disconnect]
+18:46:04 154  PTI_End ()
+18:46:04 163  [Disconnect]
+18:46:04 172  PTI_End ()
+18:46:04 173  [Disconnect]
+18:46:04 180  PTI_End ()
+18:46:04 189  [Disconnect]
+18:46:04 199  PTI_End ()
+18:46:04 207  [Disconnect]
+18:46:04 214  PTI_End ()
+18:46:04 222  [Disconnect]
+18:46:04 228  PTI_End ()
+18:46:04 236  [Disconnect]
+18:46:04 244  PTI_End ()
+18:46:04 245  [Disconnect]
+18:46:04 254  PTI_End ()
+18:46:04 267  [Disconnect]
+18:46:04 275  PTI_End ()
+18:46:04 281  [Disconnect]
+18:46:04 287  PTI_End ()
+18:46:04 288  [Disconnect]
+18:46:04 288  PTI_End ()
+18:46:04 289  [Disconnect]
+18:46:04 290  PTI_End ()
+18:46:04 297  [Disconnect]
+18:46:04 298  PTI_End ()
+18:46:04 305  [Disconnect]
+18:46:04 312  PTI_End ()
+18:46:04 317  [Disconnect]
+18:46:04 323  PTI_End ()
+18:46:04 331  [Disconnect]
+18:46:04 338  PTI_End ()
+18:46:04 344  [Disconnect]
+18:46:04 350  PTI_End ()
+18:46:04 358  [Disconnect]
+18:46:04 364  PTI_End ()
+18:46:04 370  [Disconnect]
+18:46:04 376  PTI_End ()
+18:46:04 384  [Disconnect]
+18:46:04 385  PTI_End ()
+18:46:04 386  [Disconnect]
+18:46:04 392  PTI_End ()
+18:46:04 398  [Disconnect]
+18:46:04 399  PTI_End ()
+18:46:04 405  [Disconnect]
+18:46:04 412  PTI_End ()
+18:46:04 418  [Disconnect]
+18:46:04 426  PTI_End ()
+18:46:04 427  [Disconnect]
+18:46:04 434  PTI_End ()
+18:46:04 443  [Disconnect]
+18:46:04 452  PTI_End ()
+18:46:04 459  [Disconnect]
+18:46:04 467  PTI_End ()
+18:46:04 474  [Disconnect]
+18:46:04 481  PTI_End ()
+18:46:04 482  [Disconnect]
+18:46:04 488  PTI_End ()
+18:46:04 493  [Disconnect]
+18:46:04 502  PTI_End ()
+18:46:04 507  [Disconnect]
+18:46:04 508  PTI_End ()
+18:46:04 516  [Disconnect]
+18:46:04 525  PTI_End ()
+18:46:04 533  [Disconnect]
+18:46:04 534  PTI_End ()
+18:46:04 540  [Disconnect]
+18:46:04 541  PTI_End ()
+18:46:04 547  [Disconnect]
+18:46:04 553  PTI_End ()
+18:46:04 554  [Disconnect]
+18:46:04 562  PTI_End ()
+18:46:04 569  [Disconnect]
+18:46:04 578  PTI_End ()
+18:46:04 584  [Disconnect]
+18:46:04 592  PTI_End ()
+18:46:04 600  [Disconnect]
+18:46:04 607  PTI_End ()
+18:46:04 608  [Disconnect]
+18:46:04 615  PTI_End ()
+18:46:04 621  [Disconnect]
+18:46:04 626  PTI_End ()
+18:46:04 628  [Disconnect]
+18:46:04 635  PTI_End ()
+18:46:04 636  [Disconnect]
+18:46:04 645  PTI_End ()
+18:46:04 654  [Disconnect]
+18:46:04 664  PTI_End ()
+18:46:04 665  [Disconnect]
+18:46:04 673  PTI_End ()
+18:46:04 682  [Disconnect]
+18:46:04 691  PTI_End ()
+18:46:04 699  [Disconnect]
+18:46:04 700  PTI_End ()
+18:46:04 707  [Disconnect]
+18:46:04 713  PTI_End ()
+18:46:04 719  [Disconnect]
+18:57:05 769  PTI_Init <0002.0000.0005.0000> <NTK Solutions> <Aplicacao exemplo 1.0> <24> <C:\GitHubPosPayGo\pdvWindowsPayGoPos_CSharp\POSExample\bin\Debug\PayGoPOS> <10000> <50> <> <0>
+12:47:18 174  PTI_Init <0002.0000.0005.0000> <NTK Solutions> <Aplicacao exemplo 1.0> <24> <C:\GitHubPosPayGo\pdvWindowsPayGoPos_CSharp\POSExample\bin\Debug\PayGoPOS> <10000> <50> <> <0>
+12:50:34 664  PTI_End ()
+12:50:34 679  [Disconnect]
+12:50:34 685  PTI_End ()
+12:50:34 690  [Disconnect]
+12:50:34 696  PTI_End ()
+12:50:34 701  [Disconnect]
+12:50:34 706  PTI_End ()
+12:50:34 712  [Disconnect]
+12:50:34 721  PTI_End ()
+12:50:34 727  [Disconnect]
+12:50:34 732  PTI_End ()
+12:50:34 738  [Disconnect]
+12:50:34 746  PTI_End ()
+12:50:34 753  [Disconnect]
+12:50:34 761  PTI_End ()
+12:50:34 768  [Disconnect]
+12:50:34 774  PTI_End ()
+12:50:34 779  [Disconnect]
+12:50:34 787  PTI_End ()
+12:50:34 795  [Disconnect]
+12:50:34 803  PTI_End ()
+12:50:34 810  [Disconnect]
+12:50:34 815  PTI_End ()
+12:50:34 821  [Disconnect]
+12:50:34 826  PTI_End ()
+12:50:34 832  [Disconnect]
+12:50:34 837  PTI_End ()
+12:50:34 843  [Disconnect]
+12:50:34 848  PTI_End ()
+12:50:34 853  [Disconnect]
+12:50:34 859  PTI_End ()
+12:50:34 864  [Disconnect]
+12:50:34 870  PTI_End ()
+12:50:34 876  [Disconnect]
+12:50:34 882  PTI_End ()
+12:50:34 887  [Disconnect]
+12:50:34 893  PTI_End ()
+12:50:34 898  [Disconnect]
+12:50:34 904  PTI_End ()
+12:50:34 909  [Disconnect]
+12:50:34 915  PTI_End ()
+12:50:34 922  [Disconnect]
+12:50:34 927  PTI_End ()
+12:50:34 933  [Disconnect]
+12:50:34 939  PTI_End ()
+12:50:34 944  [Disconnect]
+12:50:34 950  PTI_End ()
+12:50:34 955  [Disconnect]
+12:50:34 961  PTI_End ()
+12:50:34 966  [Disconnect]
+12:50:34 972  PTI_End ()
+12:50:34 977  [Disconnect]
+12:50:34 983  PTI_End ()
+12:50:34 988  [Disconnect]
+12:50:34 993  PTI_End ()
+12:50:34 999  [Disconnect]
+12:50:35 006  PTI_End ()
+12:50:35 014  [Disconnect]
+12:50:35 021  PTI_End ()
+12:50:35 030  [Disconnect]
+12:50:35 037  PTI_End ()
+12:50:35 044  [Disconnect]
+12:50:35 051  PTI_End ()
+12:50:35 057  [Disconnect]
+12:50:35 064  PTI_End ()
+12:50:35 069  [Disconnect]
+12:50:35 075  PTI_End ()
+12:50:35 081  [Disconnect]
+12:50:35 087  PTI_End ()
+12:50:35 092  [Disconnect]
+12:50:35 098  PTI_End ()
+12:50:35 104  [Disconnect]
+12:50:35 110  PTI_End ()
+12:50:35 115  [Disconnect]
+12:50:35 120  PTI_End ()
+12:50:35 125  [Disconnect]
+12:50:35 131  PTI_End ()
+12:50:35 137  [Disconnect]
+12:50:35 143  PTI_End ()
+12:50:35 148  [Disconnect]
+12:50:35 154  PTI_End ()
+12:50:35 159  [Disconnect]
+12:50:35 164  PTI_End ()
+12:50:35 170  [Disconnect]
+12:50:35 175  PTI_End ()
+12:50:35 181  [Disconnect]
+12:50:35 186  PTI_End ()
+12:50:35 193  [Disconnect]
+12:50:35 200  PTI_End ()
+12:50:35 208  [Disconnect]
+12:50:35 214  PTI_End ()
+12:50:35 222  [Disconnect]
+12:50:35 227  PTI_End ()
+12:50:35 233  [Disconnect]
+12:50:35 238  PTI_End ()
+12:50:35 243  [Disconnect]
+12:50:35 249  PTI_End ()
+12:50:35 254  [Disconnect]
+13:16:04 423  PTI_Init <0002.0000.0005.0000> <NTK Solutions> <Aplicacao exemplo 1.0> <24> <C:\GitHubPosPayGo\pdvWindowsPayGoPos_CSharp\POSExample\bin\Debug\PayGoPOS> <10000> <50> <> <0>
+13:38:10 130  PTI_Init <0002.0000.0005.0000> <NTK Solutions> <Aplicacao exemplo 1.0> <24> <C:\GitHubPosPayGo\pdvWindowsPayGoPos_CSharp\POSExample\bin\Debug\PayGoPOS> <10000> <50> <> <0>
+13:39:52 665  PTI_Init <0002.0000.0005.0000> <NTK Solutions> <Aplicacao exemplo 1.0> <24> <C:\GitHubPosPayGo\pdvWindowsPayGoPos_CSharp\POSExample\bin\Debug\PayGoPOS> <10000> <50> <> <0>
+17:11:41 345  PTI_Init <0002.0000.0005.0000> <NTK Solutions> <Aplicacao exemplo 1.0> <24> <C:\GitHubPosPayGo\pdvWindowsPayGoPos_CSharp\POSExample\bin\Debug\PayGoPOS> <10000> <50> <> <0>
+17:12:25 762  PTI_End ()
+17:12:25 889  [Disconnect]
+17:12:25 897  PTI_End ()
+17:12:25 904  [Disconnect]
+17:12:25 912  PTI_End ()
+17:12:25 918  [Disconnect]
+17:12:25 924  PTI_End ()
+17:12:25 930  [Disconnect]
+17:12:25 935  PTI_End ()
+17:12:25 941  [Disconnect]
+17:12:25 946  PTI_End ()
+17:12:25 952  [Disconnect]
+17:12:25 959  PTI_End ()
+17:12:25 965  [Disconnect]
+17:12:25 971  PTI_End ()
+17:12:25 977  [Disconnect]
+17:12:25 982  PTI_End ()
+17:12:25 988  [Disconnect]
+17:12:25 993  PTI_End ()
+17:12:26 000  [Disconnect]
+17:12:26 006  PTI_End ()
+17:12:26 013  [Disconnect]
+17:12:26 019  PTI_End ()
+17:12:26 027  [Disconnect]
+17:12:26 034  PTI_End ()
+17:12:26 042  [Disconnect]
+17:12:26 049  PTI_End ()
+17:12:26 057  [Disconnect]
+17:12:26 063  PTI_End ()
+17:12:26 069  [Disconnect]
+17:12:26 075  PTI_End ()
+17:12:26 082  [Disconnect]
+17:12:26 088  PTI_End ()
+17:12:26 093  [Disconnect]
+17:12:26 100  PTI_End ()
+17:12:26 107  [Disconnect]
+17:12:26 114  PTI_End ()
+17:12:26 121  [Disconnect]
+17:12:26 129  PTI_End ()
+17:12:26 134  [Disconnect]
+17:12:26 141  PTI_End ()
+17:12:26 147  [Disconnect]
+17:12:26 154  PTI_End ()
+17:12:26 160  [Disconnect]
+17:12:26 166  PTI_End ()
+17:12:26 172  [Disconnect]
+17:12:26 178  PTI_End ()
+17:12:26 184  [Disconnect]
+17:12:26 189  PTI_End ()
+17:12:26 195  [Disconnect]
+17:12:26 200  PTI_End ()
+17:12:26 207  [Disconnect]
+17:12:26 215  PTI_End ()
+17:12:26 225  [Disconnect]
+17:12:26 233  PTI_End ()
+17:12:26 244  [Disconnect]
+17:12:26 252  PTI_End ()
+17:12:26 261  [Disconnect]
+17:12:26 268  PTI_End ()
+17:12:26 275  [Disconnect]
+17:12:26 281  PTI_End ()
+17:12:26 287  [Disconnect]
+17:12:26 293  PTI_End ()
+17:12:26 299  [Disconnect]
+17:12:26 305  PTI_End ()
+17:12:26 311  [Disconnect]
+17:12:26 316  PTI_End ()
+17:12:26 322  [Disconnect]
+17:12:26 328  PTI_End ()
+17:12:26 334  [Disconnect]
+17:12:26 339  PTI_End ()
+17:12:26 347  [Disconnect]
+17:12:26 352  PTI_End ()
+17:12:26 360  [Disconnect]
+17:12:26 366  PTI_End ()
+17:12:26 372  [Disconnect]
+17:12:26 378  PTI_End ()
+17:12:26 383  [Disconnect]
+17:12:26 389  PTI_End ()
+17:12:26 395  [Disconnect]
+17:12:26 401  PTI_End ()
+17:12:26 408  [Disconnect]
+17:12:26 415  PTI_End ()
+17:12:26 422  [Disconnect]
+17:12:26 428  PTI_End ()
+17:12:26 435  [Disconnect]
+17:12:26 441  PTI_End ()
+17:12:26 447  [Disconnect]
+17:12:26 455  PTI_End ()
+17:12:26 460  [Disconnect]
+17:12:26 466  PTI_End ()
+17:12:26 472  [Disconnect]
+17:12:26 481  PTI_End ()
+17:12:26 487  [Disconnect]
+17:12:26 493  PTI_End ()
+17:12:26 499  [Disconnect]
+17:12:26 506  PTI_End ()
+17:12:26 511  [Disconnect]
+17:12:51 439  PTI_Init <0002.0000.0005.0000> <NTK Solutions> <Aplicacao exemplo 1.0> <24> <C:\GitHubPosPayGo\pdvWindowsPayGoPos_CSharp\POSExample\bin\Debug\PayGoPOS> <10000> <50> <> <0>
+17:13:08 053  PTI_End ()
+17:13:08 061  [Disconnect]
+17:13:08 067  PTI_End ()
+17:13:08 073  [Disconnect]
+17:13:08 079  PTI_End ()
+17:13:08 086  [Disconnect]
+17:13:08 092  PTI_End ()
+17:13:08 102  [Disconnect]
+17:13:08 109  PTI_End ()
+17:13:08 114  [Disconnect]
+17:13:08 122  PTI_End ()
+17:13:08 128  [Disconnect]
+17:13:08 134  PTI_End ()
+17:13:08 144  [Disconnect]
+17:13:08 154  PTI_End ()
+17:13:08 163  [Disconnect]
+17:13:08 175  PTI_End ()
+17:13:08 208  [Disconnect]
+17:13:08 222  PTI_End ()
+17:13:08 239  [Disconnect]
+17:13:08 251  PTI_End ()
+17:13:08 264  [Disconnect]
+17:13:08 274  PTI_End ()
+17:13:08 282  [Disconnect]
+17:13:08 290  PTI_End ()
+17:13:08 297  [Disconnect]
+17:13:08 306  PTI_End ()
+17:13:08 312  [Disconnect]
+17:13:08 318  PTI_End ()
+17:13:08 324  [Disconnect]
+17:13:08 331  PTI_End ()
+17:13:08 338  [Disconnect]
+17:13:08 347  PTI_End ()
+17:13:08 354  [Disconnect]
+17:13:08 362  PTI_End ()
+17:13:08 373  [Disconnect]
+17:13:08 384  PTI_End ()
+17:13:08 393  [Disconnect]
+17:13:08 399  PTI_End ()
+17:13:08 406  [Disconnect]
+17:13:08 412  PTI_End ()
+17:13:08 419  [Disconnect]
+17:13:08 425  PTI_End ()
+17:13:08 433  [Disconnect]
+17:13:08 440  PTI_End ()
+17:13:08 446  [Disconnect]
+17:13:08 452  PTI_End ()
+17:13:08 459  [Disconnect]
+17:13:08 465  PTI_End ()
+17:13:08 471  [Disconnect]
+17:13:08 478  PTI_End ()
+17:13:08 484  [Disconnect]
+17:13:08 491  PTI_End ()
+17:13:08 499  [Disconnect]
+17:13:08 505  PTI_End ()
+17:13:08 513  [Disconnect]
+17:13:08 520  PTI_End ()
+17:13:08 526  [Disconnect]
+17:13:08 532  PTI_End ()
+17:13:08 539  [Disconnect]
+17:13:08 545  PTI_End ()
+17:13:08 551  [Disconnect]
+17:13:08 559  PTI_End ()
+17:13:08 565  [Disconnect]
+17:13:08 574  PTI_End ()
+17:13:08 581  [Disconnect]
+17:13:08 588  PTI_End ()
+17:13:08 596  [Disconnect]
+17:13:08 602  PTI_End ()
+17:13:08 609  [Disconnect]
+17:13:08 614  PTI_End ()
+17:13:08 622  [Disconnect]
+17:13:08 629  PTI_End ()
+17:13:08 636  [Disconnect]
+17:13:08 641  PTI_End ()
+17:13:08 648  [Disconnect]
+17:13:08 654  PTI_End ()
+17:13:08 660  [Disconnect]
+17:13:08 666  PTI_End ()
+17:13:08 672  [Disconnect]
+17:13:08 678  PTI_End ()
+17:13:08 686  [Disconnect]
+17:13:08 693  PTI_End ()
+17:13:08 700  [Disconnect]
+17:13:08 706  PTI_End ()
+17:13:08 712  [Disconnect]
+17:13:08 719  PTI_End ()
+17:13:08 724  [Disconnect]
+17:13:08 732  PTI_End ()
+17:13:08 739  [Disconnect]
+17:13:08 744  PTI_End ()
+17:13:08 752  [Disconnect]
+17:13:08 760  PTI_End ()
+17:13:08 766  [Disconnect]
+17:13:08 772  PTI_End ()
+17:13:08 781  [Disconnect]
+17:13:08 787  PTI_End ()
+17:13:08 795  [Disconnect]
+17:56:04 510  PTI_Init <0002.0000.0005.0000> <NTK Solutions> <Aplicacao exemplo 1.0> <24> <C:\GitHubPosPayGo\pdvWindowsPayGoPos_CSharp\POSExample\bin\Debug\PayGoPOS> <10000> <50> <> <0>
+18:09:42 794  PTI_Init <0002.0000.0005.0000> <NTK Solutions> <Aplicacao exemplo 1.0> <24> <C:\GitHubPosPayGo\pdvWindowsPayGoPos_CSharp\POSExample\bin\Debug\PayGoPOS> <10000> <50> <> <0>
+18:27:38 773  PTI_Init <0002.0000.0005.0000> <NTK Solutions> <Aplicacao exemplo 1.0> <24> <C:\GitHubPosPayGo\pdvWindowsPayGoPos_CSharp\POSExample\bin\Debug\PayGoPOS> <10000> <50> <> <0>
+18:42:00 373  PTI_Init <0002.0000.0005.0000> <NTK Solutions> <Aplicacao exemplo 1.0> <24> <C:\GitHubPosPayGo\pdvWindowsPayGoPos_CSharp\POSExample\bin\Debug\PayGoPOS> <10000> <50> <> <0>
+18:46:51 837  PTI_Init <0002.0000.0005.0000> <NTK Solutions> <Aplicacao exemplo 1.0> <24> <C:\GitHubPosPayGo\pdvWindowsPayGoPos_CSharp\POSExample\bin\Debug\PayGoPOS> <10000> <50> <> <0>
+18:52:53 047  PTI_Init <0002.0000.0005.0000> <NTK Solutions> <Aplicacao exemplo 1.0> <24> <C:\GitHubPosPayGo\pdvWindowsPayGoPos_CSharp\POSExample\bin\Debug\PayGoPOS> <10000> <50> <> <0>
+18:56:03 141  PTI_Init <0002.0000.0005.0000> <NTK Solutions> <Aplicacao exemplo 1.0> <24> <C:\GitHubPosPayGo\pdvWindowsPayGoPos_CSharp\POSExample\bin\Debug\PayGoPOS> <10000> <50> <> <0>
+18:57:20 908  PTI_Init <0002.0000.0005.0000> <NTK Solutions> <Aplicacao exemplo 1.0> <24> <C:\GitHubPosPayGo\pdvWindowsPayGoPos_CSharp\POSExample\bin\Debug\PayGoPOS> <10000> <50> <> <0>
+18:59:42 154  PTI_End ()
+18:59:42 164  [Disconnect]
+18:59:42 172  PTI_End ()
+18:59:42 177  [Disconnect]
+18:59:42 183  PTI_End ()
+18:59:42 188  [Disconnect]
+18:59:42 194  PTI_End ()
+18:59:42 201  [Disconnect]
+18:59:42 210  PTI_End ()
+18:59:42 219  [Disconnect]
+18:59:42 227  PTI_End ()
+18:59:42 233  [Disconnect]
+18:59:42 239  PTI_End ()
+18:59:42 247  [Disconnect]
+18:59:42 258  PTI_End ()
+18:59:42 272  [Disconnect]
+18:59:42 286  PTI_End ()
+18:59:42 293  [Disconnect]
+18:59:42 301  PTI_End ()
+18:59:42 307  [Disconnect]
+18:59:42 315  PTI_End ()
+18:59:42 324  [Disconnect]
+18:59:42 330  PTI_End ()
+18:59:42 337  [Disconnect]
+18:59:42 349  PTI_End ()
+18:59:42 356  [Disconnect]
+18:59:42 362  PTI_End ()
+18:59:42 368  [Disconnect]
+18:59:42 375  PTI_End ()
+18:59:42 381  [Disconnect]
+18:59:42 387  PTI_End ()
+18:59:42 392  [Disconnect]
+18:59:42 398  PTI_End ()
+18:59:42 404  [Disconnect]
+18:59:42 409  PTI_End ()
+18:59:42 415  [Disconnect]
+18:59:42 420  PTI_End ()
+18:59:42 426  [Disconnect]
+18:59:42 432  PTI_End ()
+18:59:42 437  [Disconnect]
+18:59:42 443  PTI_End ()
+18:59:42 448  [Disconnect]
+18:59:42 454  PTI_End ()
+18:59:42 460  [Disconnect]
+18:59:42 465  PTI_End ()
+18:59:42 473  [Disconnect]
+18:59:42 480  PTI_End ()
+18:59:42 486  [Disconnect]
+18:59:42 492  PTI_End ()
+18:59:42 498  [Disconnect]
+18:59:42 504  PTI_End ()
+18:59:42 510  [Disconnect]
+18:59:42 516  PTI_End ()
+18:59:42 522  [Disconnect]
+18:59:42 528  PTI_End ()
+18:59:42 533  [Disconnect]
+18:59:42 539  PTI_End ()
+18:59:42 546  [Disconnect]
+18:59:42 552  PTI_End ()
+18:59:42 558  [Disconnect]
+18:59:42 563  PTI_End ()
+18:59:42 569  [Disconnect]
+18:59:42 575  PTI_End ()
+18:59:42 580  [Disconnect]
+18:59:42 586  PTI_End ()
+18:59:42 592  [Disconnect]
+18:59:42 597  PTI_End ()
+18:59:42 603  [Disconnect]
+18:59:42 609  PTI_End ()
+18:59:42 616  [Disconnect]
+18:59:42 622  PTI_End ()
+18:59:42 630  [Disconnect]
+18:59:42 636  PTI_End ()
+18:59:42 641  [Disconnect]
+18:59:42 647  PTI_End ()
+18:59:42 653  [Disconnect]
+18:59:42 658  PTI_End ()
+18:59:42 664  [Disconnect]
+18:59:42 670  PTI_End ()
+18:59:42 677  [Disconnect]
+18:59:42 686  PTI_End ()
+18:59:42 693  [Disconnect]
+18:59:42 701  PTI_End ()
+18:59:42 707  [Disconnect]
+18:59:42 717  PTI_End ()
+18:59:42 724  [Disconnect]
+18:59:42 730  PTI_End ()
+18:59:42 736  [Disconnect]
+18:59:42 742  PTI_End ()
+18:59:42 748  [Disconnect]
+18:59:42 754  PTI_End ()
+18:59:42 763  [Disconnect]
+18:59:42 771  PTI_End ()
+18:59:42 777  [Disconnect]
+18:59:42 784  PTI_End ()
+18:59:42 792  [Disconnect]
+18:59:42 800  PTI_End ()
+18:59:42 806  [Disconnect]

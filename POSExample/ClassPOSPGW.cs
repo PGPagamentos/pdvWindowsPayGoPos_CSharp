@@ -795,7 +795,7 @@ namespace POSExample
             PWINFO_CARDNAME = 75, //Name of the card or issuer. 
             PWINFO_BOARDINGTAX = 77, //Valor da taxa de embarque, considerando PWINFO_CURREXP, já incluído em PWINFO_TOTAMNT. 
             PWINFO_TIPAMOUNT = 78, //Valor da taxa de serviço (gorjeta), considerando PWINFO_CURREXP, já incluído em PWINFO_TOTAMNT. 
-            //PWINFO_RCPTFULL = 82, //Comprovante – via completa.
+            PWINFO_RCPTFULL = 82, //Comprovante – via completa.
             PWINFO_RCPTMERCH = 83, //Comprovante – via do estabelecimento.
             PWINFO_RCPTCHOLDER = 84, //Comprovante – via do portador.
             PWINFO_RCPTCHSHORT = 85, //Comprovante – via reduzida 
