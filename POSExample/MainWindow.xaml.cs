@@ -1047,13 +1047,14 @@ namespace POSExample
             ClassPOSPGW.PTI_EFT_Exec(terminalId, ref ret);
 
             ///////
+            //ret = 0;  forcar a execucao
             if (ret == 0)           // Transação autorizada OK
             {
                
                 WriteLog("\nFuncao Administrativa OK");
                 PrintResultParams(terminalId);
                 ClassPOSPGW.PTI_Display(terminalId, "Operacao Administrativa OK: ", ref ret);
-
+                PrintAdministrativeResult(terminalId);
                 OperacaoConfirmacao(terminalId);
                 PrintResultParams(terminalId);
 
@@ -1076,7 +1077,52 @@ namespace POSExample
 
         }
 
-        
+
+        //#=====================================================================================
+        //# Funcao     :  PrintAdministrativeResult
+        //#
+        //# Descricao  :  Imprime relatório gerado pela  Operação  administrativa se houver.
+        //#
+        //# Entradas   :  terminalId
+        //#
+        //# Saidas     :  nao ha.
+        //#
+        //# Retorno    :  nao ha.
+        //#====================================================================================
+        void PrintAdministrativeResult(string terminalId)
+        {
+
+            
+            StringBuilder szAux = new StringBuilder(10000);
+             
+            short iRet = -1;
+            foreach (uint item in Enum.GetValues(typeof(ClassPOSPGW.PWINFO)))
+            {
+                
+                // verifica se existe algum comprovante a ser impresso
+                if ((item == (uint)ClassPOSPGW.PWINFO.PWINFO_RCPTFULL) ||
+                    (item == (uint)ClassPOSPGW.PWINFO.PWINFO_RCPTMERCH) ||
+                    (item == (uint)ClassPOSPGW.PWINFO.PWINFO_RCPTMERCH) ||
+                    (item == (uint)ClassPOSPGW.PWINFO.PWINFO_RCPTCHSHORT))
+                {
+                    
+                    ClassPOSPGW.PTI_EFT_GetInfo(terminalId, (int)item, 10000, szAux, ref iRet);
+                    
+                    if (iRet == 0)
+                    {
+                        ImpressaoPTI_EFT_PrintReceipt(terminalId);
+                    }
+                    else
+                    {
+                        WriteLog("PTI_EFT_GetInfo error : " + iRet.ToString());    
+                    }
+
+                }   
+            }
+        }
+
+
+
         //=====================================================================================
         //     Funcao     :  PrintResultParams
         //
@@ -1122,17 +1168,18 @@ namespace POSExample
 
                 if (ret == (int)ClassPOSPGW.PTIRET.PTIRET_OK)
                 {
-                     
+
                     //string str = new string(pszValue);
                     retorno = pszValue.ToString();
-                    WTexto  = WTexto + volta + " = " + retorno + "\n";
+                    WTexto = WTexto + volta + " = " + retorno + "\n";
                     //WTextoMemo = WTextoMemo + volta + " = " + retorno + "\n" + "\r";
                     WTextoMemo = WTextoMemo + volta + " = " + retorno + "\n";
-            }
+                }
+                
 
                 I= I + 1;
 
-        }
+            }
 
             WriteLog(WTextoMemo);
 
@@ -1231,9 +1278,9 @@ namespace POSExample
                 case (int)ClassPOSPGW.PWINFO.PWINFO_PNDAUTEXTREF    : return "PWINFO_PNDAUTEXTREF";
                 case (int)ClassPOSPGW.PWINFO.PWINFO_DUEAMNT         : return "PWINFO_DUEAMNT";
                 case (int)ClassPOSPGW.PWINFO.PWINFO_READJUSTEDAMNT  : return "PWINFO_READJUSTEDAMNT";
+                case (int)ClassPOSPGW.PWINFO.PWINFO_CHOLDERNAME     : return "PWINFO_CHOLDERNAME";
+                case (int)ClassPOSPGW.PWINFO.PWINFO_CARDNAMESTD     : return "PWINFO_CARDNAMESTD";
                 default                                             : return "PWINFO_XXX";
-
-
 
             }
         }
